@@ -17,10 +17,6 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
-
 Route::get('/about', function () {
     return view('about');
 });
@@ -29,10 +25,10 @@ Route::get('/destination', function () {
     return view('destination');
 });
 
-Route::get('/register', function () {
-    return view('auth/register');
-});
-
 Route::get('/contact', function () {
     return view('contact');
+});
+
+Route::get('/register', function () {
+    return view('auth/register');
 });
