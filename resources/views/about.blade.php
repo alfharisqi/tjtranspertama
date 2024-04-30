@@ -3,7 +3,7 @@
 @section('front-end')
 				<x-front-navbar></x-front-navbar>
 
-				<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/bg_4.jpg'); width: 100%">
+				<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/train2.jpg'); width: 100%">
 								<div class="overlay"></div>
 								<div class="container">
 												<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
@@ -31,13 +31,8 @@
 																												<div class="row justify-content-start pb-3">
 																																<div class="col-md-12 heading-section ftco-animate">
 																																				<span class="subheading">About Us</span>
-																																				<h2 class="mb-4">Confido Tour And Travel</h2>
-																																				<p>Berasal dari bahasa Latin Confido yang
-																																								berarti kepercayaan. Ini menandakan website kami
-																																								terpercaya dan bisa diandalkan. Sesuai dengan kebutuhan
-																																								pengguna kami.
-																																								Slogan kami "Fly Away!" dimana para pengguna bisa
-																																								menaiki pesawat dan terbang pergi jauh.</p>
+																																				<h2 class="mb-4">SONIC</h2>
+																																				<p>Terinspirasi dari Sonic Biru.</p>
 																																</div>
 																												</div>
 																								</div>
@@ -62,9 +57,9 @@
 																								<div class="testimony-wrap py-4">
 																												<div class="text">
 																																<div class="d-flex align-items-center">
-																																				<div class="user-img" style="background-image: url(images/person_1.jpg)"></div>
+																																				<div class="user-img" style="background-image: url(images/carlos.png)"></div>
 																																				<div class="pl-3">
-																																								<p class="name">Faisal Ahmad Gifari</p>
+																																								<p class="name">Brisbane Sihombing</p>
 																																								<span class="position">CEO</span>
 																																				</div>
 																																</div>
@@ -75,9 +70,9 @@
 																								<div class="testimony-wrap py-4">
 																												<div class="text">
 																																<div class="d-flex align-items-center">
-																																				<div class="user-img" style="background-image: url(images/person_2.jpg)"></div>
+																																				<div class="user-img" style="background-image: url(images/carlos.png)"></div>
 																																				<div class="pl-3">
-																																								<p class="name">Muhammad Fauzan Ilham</p>
+																																								<p class="name">Mayadi Silalahi</p>
 																																								<span class="position">Designer</span>
 																																				</div>
 																																</div>
@@ -88,9 +83,9 @@
 																								<div class="testimony-wrap py-4">
 																												<div class="text">
 																																<div class="d-flex align-items-center">
-																																				<div class="user-img" style="background-image: url(images/person_3.jpg)"></div>
+																																				<div class="user-img" style="background-image: url(images/carlos.png)"></div>
 																																				<div class="pl-3">
-																																								<p class="name">Fikri Dean Radityo</p>
+																																								<p class="name">Petra Keliat</p>
 																																								<span class="position">Back End Developer</span>
 																																				</div>
 																																</div>
@@ -101,15 +96,29 @@
 																								<div class="testimony-wrap py-4">
 																												<div class="text">
 																																<div class="d-flex align-items-center">
-																																				<div class="user-img" style="background-image: url(images/person_4.jpg)"></div>
+																																				<div class="user-img" style="background-image: url(images/carlos.png)"></div>
 																																				<div class="pl-3">
-																																								<p class="name">Jhalu Suryo Seto</p>
+																																								<p class="name">Paskal Manik</p>
 																																								<span class="position">Front End Developer</span>
 																																				</div>
 																																</div>
 																												</div>
 																								</div>
 																				</div>
+
+																				<div class="item">
+																					<div class="testimony-wrap py-4">
+																									<div class="text">
+																													<div class="d-flex align-items-center">
+																																	<div class="user-img" style="background-image: url(images/carlos.png)"></div>
+																																	<div class="pl-3">
+																																					<p class="name">Syuja Aqilsyah</p>
+																																					<span class="position">Front End Developer</span>
+																																	</div>
+																													</div>
+																									</div>
+																					</div>
+																	</div>
 																</div>
 												</div>
 								</div>
