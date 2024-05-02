@@ -2,9 +2,12 @@
 
 use App\Models\Tag;
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SesiController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PrintController;
@@ -27,6 +30,7 @@ use App\Http\Controllers\UserProfileController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+route::middleware(['guest'])->group(function(){
 
 Route::get('/', function () {
     return view('landing');
@@ -140,3 +144,21 @@ Route::get('/checkprice', [OrderController::class, 'checkprice', 'verified']);
 // });
 
 require __DIR__ . '/auth.php';
+
+    Route::get('/login',[SesiController::class, 'index'])->name('login');
+    Route::post('/login',[SesiController::class, 'login']);
+});
+Route::get('/home',function(){
+    if(Auth::user()->role == 'user'){
+        return redirect('user');
+    }elseif(Auth::user()->role == 'admin'){
+        return redirect('admin');
+    }
+});
+
+Route::middleware(['auth'])->group(function(){
+    Route::get('/admin',[AdminController::class, 'index']);
+    Route::get('/user',[AdminController::class, 'user'])->middleware('userAkses:user');
+    Route::get('/admin',[AdminController::class, 'admin'])->middleware('userAkses:admin');
+    Route::get('/logout',[SesiController::class, 'logout']);
+});
