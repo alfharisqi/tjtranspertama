@@ -1,21 +1,21 @@
 <?php
 
-use App\Http\Controllers\AirlineController;
-use App\Http\Controllers\ComplaintController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\MethodController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PrintController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TrackController;
+use App\Http\Controllers\MethodController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserProfileController;
 use Illuminate\Support\Facades\Route;
 
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+require __DIR__ . '/auth.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -23,11 +23,12 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
+// Route untuk halaman landing, tentang, destinasi, dan kontak
 Route::get('/', function () {
     return view('landing');
 });
@@ -44,45 +45,38 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+// Route yang memerlukan autentikasi
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Dashboard Route
+    Route::get('/dashboard', [DashboardController::class, 'index']);
 
-require __DIR__.'/auth.php';
+    // Order Route
+    Route::resource('/orders', OrderController::class);
 
-Route::get('/print', [PrintController::class, 'index'])->middleware(['auth', 'verified']);
+    // Transaction Route
+    Route::resource('/transactions', TransactionController::class);
 
-Route::get('/printpdf', [PrintController::class, 'print'])->middleware(['auth', 'verified']);
+    // Airline Route
+    Route::resource('/airlines', AirlineController::class)->middleware('can:isAdmin');
 
-// Complaint Route
-Route::resource('/complaints', ComplaintController::class)->middleware(['auth', 'verified']);
+    // Type Route
+    Route::resource('/types', TypeController::class)->middleware('can:isAdmin');
 
-//  Dashboard Route
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
+    // Track Route
+    Route::resource('/tracks', TrackController::class)->middleware('can:isAdmin');
 
-//  Order Route
-Route::resource('/orders', OrderController::class)->middleware(['auth', 'verified']);
+    // Ticket Route
+    Route::resource('/tickets', TicketController::class);
 
-//  Transaction Route
-Route::resource('/transactions', TransactionController::class)->middleware(['auth', 'verified']);
+    // Price Route
+    Route::resource('/prices', PriceController::class);
 
-//  Airline Route
-Route::resource('/airlines', AirlineController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // Method Route
+    Route::resource('/methods', MethodController::class)->middleware('can:isAdmin');
 
-//  Type Route
-Route::resource('/types', TypeController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // User Route
+    Route::resource('/users', UserController::class);
 
-//  Track Route
-Route::resource('/tracks', TrackController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    Route::get('/checkprice', [OrderController::class, 'checkprice']);
+});
 
-//  Ticket Route
-Route::resource('/tickets', TicketController::class)->middleware(['auth', 'verified']);
-
-//  Price Route
-Route::resource('/prices', PriceController::class)->middleware(['auth', 'verified']);
-
-//  Method Route
-Route::resource('/methods', MethodController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
-
-//  User Route
-Route::resource('/users', UserController::class)->middleware(['auth', 'verified']);
-
-// Check Price Route
-Route::get('/checkprice', [OrderController::class, 'checkprice', 'verified']);

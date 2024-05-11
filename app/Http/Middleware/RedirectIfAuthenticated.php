@@ -10,12 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 class RedirectIfAuthenticated
 {
-    /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
-     */
-    public function handle(Request $request, Closure $next, string ...$guards): Response
+    public function handle(Request $request, Closure $next, string ...$guards)
     {
         $guards = empty($guards) ? [null] : $guards;
 
@@ -23,6 +18,12 @@ class RedirectIfAuthenticated
             if (Auth::guard($guard)->check()) {
                 return redirect(RouteServiceProvider::HOME);
             }
+        }
+
+        // Jika pengguna belum terautentikasi dan mencoba mengakses halaman login atau register
+        // maka arahkan mereka ke halaman landing
+        if ($request->is('login') || $request->is('register')) {
+            return redirect('/');
         }
 
         return $next($request);
