@@ -1,5 +1,8 @@
 <?php
 
+use App\Models\Tag;
+use App\Models\Post;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
@@ -13,7 +16,6 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserProfileController;
-use Illuminate\Support\Facades\Route;
 
 require __DIR__ . '/auth.php';
 
@@ -28,7 +30,6 @@ require __DIR__ . '/auth.php';
 |
 */
 
-// Route untuk halaman landing, tentang, destinasi, dan kontak
 Route::get('/', function () {
     return view('landing');
 });
@@ -45,38 +46,43 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// Route yang memerlukan autentikasi
-Route::middleware(['auth', 'verified'])->group(function () {
-    // Dashboard Route
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+// Print Testing Route
+Route::get('/print', [PrintController::class, 'index'])->middleware(['auth', 'verified']);
 
-    // Order Route
-    Route::resource('/orders', OrderController::class);
+Route::get('/printpdf', [PrintController::class, 'print'])->middleware(['auth', 'verified']);
 
-    // Transaction Route
-    Route::resource('/transactions', TransactionController::class);
+// Complaint Route
+Route::resource('/complaints', ComplaintController::class)->middleware(['auth', 'verified']);
 
-    // Airline Route
-    Route::resource('/airlines', AirlineController::class)->middleware('can:isAdmin');
+//  Dashboard Route
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
-    // Type Route
-    Route::resource('/types', TypeController::class)->middleware('can:isAdmin');
+//  Order Route
+Route::resource('/orders', OrderController::class)->middleware(['auth', 'verified']);
 
-    // Track Route
-    Route::resource('/tracks', TrackController::class)->middleware('can:isAdmin');
+//  Transaction Route
+Route::resource('/transactions', TransactionController::class)->middleware(['auth', 'verified']);
 
-    // Ticket Route
-    Route::resource('/tickets', TicketController::class);
+//  Airline Route
+Route::resource('/airlines', AirlineController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
 
-    // Price Route
-    Route::resource('/prices', PriceController::class);
+//  Type Route
+Route::resource('/types', TypeController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
 
-    // Method Route
-    Route::resource('/methods', MethodController::class)->middleware('can:isAdmin');
+//  Track Route
+Route::resource('/tracks', TrackController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
 
-    // User Route
-    Route::resource('/users', UserController::class);
+//  Ticket Route
+Route::resource('/tickets', TicketController::class)->middleware(['auth', 'verified']);
 
-    Route::get('/checkprice', [OrderController::class, 'checkprice']);
-});
+//  Price Route
+Route::resource('/prices', PriceController::class)->middleware(['auth', 'verified']);
 
+//  Method Route
+Route::resource('/methods', MethodController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+
+//  User Route
+Route::resource('/users', UserController::class)->middleware(['auth', 'verified']);
+
+// Check Price Route
+Route::get('/checkprice', [OrderController::class, 'checkprice'])->middleware(['auth', 'verified']);
