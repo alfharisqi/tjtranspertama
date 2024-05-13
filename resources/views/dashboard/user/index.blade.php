@@ -195,8 +195,7 @@
                                                                                 class="col-sm-2 col-form-label">Jenis:</label>
                                                                             <select name="gender" id="gender"
                                                                                 class="form-control1" required>
-                                                                                <option selected value={{ $user->gender }}
-                                                                                    disabled>
+                                                                                <option selected value="" disabled>
                                                                                     Pilih Jenis
                                                                                 </option>
                                                                                 @if ($user->gender == 1)

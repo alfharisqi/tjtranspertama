@@ -3,10 +3,27 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Auth\AuthenticationException;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    protected function unauthenticated($request, AuthenticationException $exception)
+    {
+        if ($request->expectsJson()) {
+            return response()->json(['error' => 'Unauthenticated.'], 401);
+        }
+
+        // Redirect to email verification if accessing routes that require it
+        if ($request->is('print') || $request->is('printpdf') || $request->is('complaints/*') || $request->is('dashboard') || $request->is('orders/*') || $request->is('transactions/*') || $request->is('airlines/*') || $request->is('types/*') || $request->is('tracks/*') || $request->is('tickets/*') || $request->is('prices/*') || $request->is('methods/*') || $request->is('users/*')) {
+            return Redirect::guest(URL::route('verification.notice'));
+        }
+
+        return Redirect::guest(URL::route('login'));
+    }
+    
     /**
      * A list of exception types with their corresponding custom log levels.
      *

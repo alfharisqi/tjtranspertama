@@ -1,21 +1,23 @@
 <?php
 
-use App\Http\Controllers\AirlineController;
-use App\Http\Controllers\ComplaintController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\MethodController;
+use App\Models\Tag;
+use App\Models\Post;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PrintController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\TicketController;
 use App\Http\Controllers\TrackController;
+use App\Http\Controllers\MethodController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\ComplaintController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserProfileController;
 
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+require __DIR__ . '/auth.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +25,8 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |--------------------------------------------------------------------------
 |
 | Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
 |
 */
 
@@ -44,9 +46,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-
-require __DIR__.'/auth.php';
-
+// Print Testing Route
 Route::get('/print', [PrintController::class, 'index'])->middleware(['auth', 'verified']);
 
 Route::get('/printpdf', [PrintController::class, 'print'])->middleware(['auth', 'verified']);
@@ -85,4 +85,4 @@ Route::resource('/methods', MethodController::class)->middleware(['auth', 'verif
 Route::resource('/users', UserController::class)->middleware(['auth', 'verified']);
 
 // Check Price Route
-Route::get('/checkprice', [OrderController::class, 'checkprice', 'verified']);
+Route::get('/checkprice', [OrderController::class, 'checkprice'])->middleware(['auth', 'verified']);

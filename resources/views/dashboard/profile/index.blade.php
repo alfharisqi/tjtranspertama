@@ -89,11 +89,14 @@
                                             Nomor telepon belum di set
                                         @endif
                                     </p>
+
                                     <p class="text-muted text-center">
-                                        @if ($user->gender)
-                                            {{ $user->phone_number }} &#128383;
+                                        @if ($user->gender == 1)
+                                            Laki-laki
+                                        @elseif($user->gender == 0)
+                                            Perempuan
                                         @else
-                                            Jenis Kelamin belum di set
+                                            belum di set
                                         @endif
                                     </p>
 
