@@ -26,6 +26,11 @@ class RedirectIfAuthenticated
             return redirect('/');
         }
 
+        // Tambahkan pengecualian untuk rute /checkprice
+        if ($request->is('checkprice')) {
+            return $next($request);
+        }
+
         return $next($request);
     }
 }

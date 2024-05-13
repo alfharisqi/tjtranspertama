@@ -15,16 +15,18 @@ class UserAkses
      */
     public function handle(Request $request, Closure $next, $role): Response
     {
-        if(auth()->user()->role == $role){
+        if (auth()->user()->role == $role) {
             return $next($request);
         }
-        // return redirect('admin');
-        
-            if (auth()->user()->role === 'admin') {
-                return redirect('/admin');
-            } elseif (auth()->user()->role === 'user') {
-                return redirect('/user');
-            }
-        
+
+        // Pengalihan berdasarkan peran pengguna
+        if (auth()->user()->role === 'admin') {
+            return redirect('/admin');
+        } elseif (auth()->user()->role === 'user') {
+            return redirect('/user');
+        }
+
+        // Kasus default, misalnya jika peran pengguna tidak dikenali
+        return redirect('/');
     }
 }
