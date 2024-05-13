@@ -6,6 +6,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Mail;
 
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -16,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role', 'image',
+        'name', 'email', 'password','role','image', 'gender', 'phone_number'
     ];
 
     /**
@@ -37,21 +38,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /**
-     * Determine if the user is an admin.
-     *
-     * @return bool
-     */
+    // Method to check if the user is an admin
     public function isAdmin()
     {
         return $this->role === 'admin';
     }
 
-    /**
-     * Determine if the user is a customer.
-     *
-     * @return bool
-     */
     public function isCustomer()
     {
         return $this->role === 'customer';
