@@ -17,6 +17,7 @@ class LoginRequest extends FormRequest
      * @return bool
      */
     public function authorize()
+
     {
         return true;
     }
@@ -27,6 +28,7 @@ class LoginRequest extends FormRequest
      * @return array
      */
     public function rules()
+
     {
         return [
             'email' => ['required', 'string', 'email'],
@@ -42,6 +44,7 @@ class LoginRequest extends FormRequest
      * @throws \Illuminate\Validation\ValidationException
      */
     public function authenticate()
+
     {
         $this->ensureIsNotRateLimited();
 

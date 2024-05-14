@@ -24,13 +24,14 @@ class AuthServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->registerPolicies();
-    
-        Gate::define('isAdmin', function (User $user) {
-            return $user->isAdmin(); // Misalnya, method isAdmin() ada di model User
+
+        Gate::define('isAdmin', function ($user) {
+            return $user->isAdmin();
         });
-    
-        Gate::define('isCustomer', function (User $user) {
-            return $user->isCustomer(); // Misalnya, method isCustomer() ada di model User
+
+        Gate::define('isCustomer', function ($user) {
+            return $user->isCustomer();
         });
     }
 }
+
