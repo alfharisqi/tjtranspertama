@@ -1,21 +1,18 @@
 <?php
 
-use App\Models\Tag;
-use App\Models\Post;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TypeController;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\PriceController;
 use App\Http\Controllers\PrintController;
-use App\Http\Controllers\TrackController;
-use App\Http\Controllers\MethodController;
-use App\Http\Controllers\TicketController;
-use App\Http\Controllers\AirlineController;
 use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\UserProfileController;
+use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\TrackController;
+use App\Http\Controllers\TicketController;
+use App\Http\Controllers\PriceController;
+use App\Http\Controllers\MethodController;
+use App\Http\Controllers\UserController;
 
 require __DIR__ . '/auth.php';
 
@@ -46,43 +43,45 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-// Print Testing Route
-Route::get('/print', [PrintController::class, 'index'])->middleware(['auth', 'verified']);
+// Route group for authenticated and verified users
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Print Testing Route
+    Route::get('/print', [PrintController::class, 'index']);
+    Route::get('/printpdf', [PrintController::class, 'print']);
 
-Route::get('/printpdf', [PrintController::class, 'print'])->middleware(['auth', 'verified']);
+    // Complaint Route
+    Route::resource('/complaints', ComplaintController::class);
 
-// Complaint Route
-Route::resource('/complaints', ComplaintController::class)->middleware(['auth', 'verified']);
+    // Dashboard Route
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-//  Dashboard Route
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
+    // Order Route
+    Route::resource('/orders', OrderController::class);
 
-//  Order Route
-Route::resource('/orders', OrderController::class)->middleware(['auth', 'verified']);
+    // Transaction Route
+    Route::resource('/transactions', TransactionController::class);
 
-//  Transaction Route
-Route::resource('/transactions', TransactionController::class)->middleware(['auth', 'verified']);
+    // Airline Route
+    Route::resource('/airlines', AirlineController::class)->middleware('can:isAdmin');
 
-//  Airline Route
-Route::resource('/airlines', AirlineController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // Type Route
+    Route::resource('/types', TypeController::class)->middleware('can:isAdmin');
 
-//  Type Route
-Route::resource('/types', TypeController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // Track Route
+    Route::resource('/tracks', TrackController::class)->middleware('can:isAdmin');
 
-//  Track Route
-Route::resource('/tracks', TrackController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // Ticket Route
+    Route::resource('/tickets', TicketController::class);
 
-//  Ticket Route
-Route::resource('/tickets', TicketController::class)->middleware(['auth', 'verified']);
+    // Price Route
+    Route::resource('/prices', PriceController::class);
 
-//  Price Route
-Route::resource('/prices', PriceController::class)->middleware(['auth', 'verified']);
+    // Method Route
+    Route::resource('/methods', MethodController::class)->middleware('can:isAdmin');
 
-//  Method Route
-Route::resource('/methods', MethodController::class)->middleware(['auth', 'verified', 'can:isAdmin']);
+    // User Route
+    Route::resource('/users', UserController::class);
 
-//  User Route
-Route::resource('/users', UserController::class)->middleware(['auth', 'verified']);
-
-// Check Price Route
-Route::get('/checkprice', [OrderController::class, 'checkprice'])->middleware(['auth', 'verified']);
+    // Check Price Route
+    Route::get('/checkprice', [OrderController::class, 'checkprice']);
+});
