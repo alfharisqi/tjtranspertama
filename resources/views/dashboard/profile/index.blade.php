@@ -70,7 +70,7 @@
                                 <!-- /.card-body -->
 
                                 <div class="card-body">
-                                    <p class="text-muted text-center">{{ $user->email }} &#65312;</p>
+                                    <p class="text-muted text-center">{{ $user->email }}</p>
 
                                     <p class="text-muted text-center">
                                         @if ($user->email_verified_at)
