@@ -154,7 +154,7 @@
                                                         <select name="gender" id="gender" class="form-control col-sm-10"
                                                             required>
                                                             <option selected value="" disabled>
-                                                                Pilih Jenis
+                                                                Pilih Jenis Kelamin
                                                             </option>
                                                             @if ($user->gender == 1)
                                                                 <option value=1 selected>
