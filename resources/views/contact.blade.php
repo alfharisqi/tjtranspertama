@@ -45,7 +45,7 @@
 						<span class="fa fa-paper-plane"></span>
 					</div>
 					<h3 class="mb-2">Email Address</h3>
-					<p><a href="mailto:confidotiket@gmail.com">confidotiket@gmail.com</a></p>
+					<p><a href="mailto:sonicticket@gmail.com">sonicticket@gmail.com</a></p>
 				</div>
 			</div>
 			<div class="col-md-3 d-flex">
@@ -54,7 +54,7 @@
 						<span class="fa fa-globe"></span>
 					</div>
 					<h3 class="mb-2">Website</h3>
-					<p><a href="https://confido.fikridean.my.id/">confido.fikridean.my.id</a></p>
+					<p><a href="https://confido.fikridean.my.id/">sonic.fikridean.my.id</a></p>
 				</div>
 			</div>
 		</div>
@@ -78,8 +78,8 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p>Confido berasal dari bahasa Latin, Confido yang berarti kepercayaan. Ini menandakan website
-						kami terpercaya dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
+					<p>Sonic yang berarti kepercayaan. Ini menandakan website
+						kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
 						<li class="ftco-animate"><a href="https://twitter.com/ConfidoTM" target="_blank"><span class="fa fa-twitter"></span></a></li>
 						<li class="ftco-animate"><a href="https://www.instagram.com/confidotm/?hl=id" target="_blank"><span class="fa fa-facebook"></span></a></li>
@@ -109,7 +109,7 @@
 									Cabe Ilir, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418</span></li>
 							<li><a href="tel://+6281384002161"><span class="icon fa fa-whatsapp"></span><span class="text">081384002161 Admin 1</span></a></li>
 							<li><a href="tel://+6281384002161"><span class="icon fa fa-whatsapp"></span><span class="text">088219983235 Admin 2</span></a></li>
-							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">confido.fikridean.my.id</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">sonic.fikridean.my.id</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -120,7 +120,7 @@
 
 				<p>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Confido &copy;
+					Sonic &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
