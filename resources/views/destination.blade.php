@@ -20,34 +20,31 @@
 		<div class="row">
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_1.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_1.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Goa Jomblang</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jetis, Pacarejo, Kec. Semanu,
-							Kabupaten Gunung Kidul, Daerah Istimewa Yogyakarta 55893</p>
+						<h3><a>Medan (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Ibu kota provinsi Sumatera Utara, Medan adalah kota terbesar ketiga di Indonesia dan merupakan pusat ekonomi, bisnis, dan pendidikan di wilayah ini. Kota ini juga terkenal dengan keberagaman budayanya dan kuliner khas seperti durian dan soto Medan.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_2.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_2.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Taman Mini Indonesia Indah</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Raya Taman Mini, Jakarta Timur,
-							DKI Jakarta, Indonesia</p>
+						<h3><a>Kisaran (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Kisaran adalah ibu kota Kabupaten Asahan. Kota ini berfungsi sebagai pusat administrasi dan perdagangan bagi daerah sekitarnya, serta memiliki beberapa fasilitas pendidikan dan kesehatan.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_3.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_3.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Kawah Putih</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Raya Soreang Ciwidey, Ciwidey,
-							Bandung, Jawa Barat 40973</p>
+						<h3><a>Rantau Prapat (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Rantau Prapat adalah ibu kota Kabupaten Labuhan Batu. Kota ini merupakan titik penghubung penting di jalur kereta api dan memiliki aktivitas ekonomi yang beragam, termasuk perkebunan dan perdagangan.</p>
 					</div>
 				</div>
 			</div>
@@ -56,77 +53,72 @@
 					<a href="#" class="img" style="background-image: url(images/destinasi_4.jpg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Curug Lawe Benowo</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Desa Kalisidi, RT.01/RW.06,
-							Indrakila, Lerep, Kec. Ungaran Bar., Kabupaten Semarang, Jawa Tengah 50519</p>
+						<h3><a>Belawan (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Belawan adalah pelabuhan utama di Sumatera Utara yang menghubungkan Medan dengan jalur perdagangan internasional. Pelabuhan ini memainkan peran vital dalam ekspor dan impor barang di wilayah ini.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_5.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_5.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Klenteng Sanggar Agung</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Sukolilo No.100, Sukolilo Baru,
-							Kec. Bulak, Kota Surabaya, Jawa Timur 60122</p>
+						<h3><a>Tebing Tinggi (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Kota ini adalah pusat industri dan perdagangan di Sumatera Utara, serta terkenal dengan produk makanan ringan dan kue-kue tradisionalnya. Tebing Tinggi juga merupakan titik transit penting di jalur kereta api.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_6.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_6.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Gunung Dempo</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Kecamatan Pagar Alam Selatan, Kota
-							Pagar Alam, Sumatra Selatan, Indonesia</p>
+						<h3><a>Pematang Siantar (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Kota terbesar kedua di Sumatera Utara, Pematang Siantar adalah pusat pendidikan, kebudayaan, dan perdagangan. Kota ini juga dikenal dengan kebun binatang dan produksi kerajinan tangan.
+						</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_7.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_7.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Kampung Keling</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Teuku Cik Ditiro, Madras Hulu,
-							Kec. Medan Polonia, Kota Medan, Sumatera Utara</p>
+						<h3><a>Padang (Sumatera Barat)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Ibu kota provinsi Sumatera Barat, Padang adalah kota pesisir yang terkenal dengan masakan Padang yang populer di seluruh Indonesia. Kota ini juga menjadi pusat pendidikan, pemerintahan, dan pariwisata.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_8.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_8.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Gunung Bromo</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Podokoyo, Tosari, Pasuruan, Jawa
-							Timur</p>
+						<h3><a>Pariaman (Sumatera Barat)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Pariaman adalah kota pesisir yang terkenal dengan pantainya yang indah dan festival Tabuik yang unik. Kota ini juga merupakan tujuan wisata populer bagi wisatawan lokal dan internasional.
+						</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_9.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_9.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Goa Gajah</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Bedulu, Kec. Blahbatuh, Kabupaten
-							Gianyar, Bali</p>
+						<h3><a>Naras (Sumatera Barat)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Naras adalah kota kecil di dekat Pariaman yang dilalui oleh jalur kereta api. Kota ini berfungsi sebagai titik penghubung dan memiliki keindahan alam yang menarik wisatawan.</p>
 					</div>
 				</div>
 			</div>
 
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_10.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_10.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>The Heritage Palace</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jalan Permata Raya Dukuh Tegal
-							Mulyo rt.002/rw.008, Honggobayan, Pabelan, Kec. Kartasura, Kabupaten Sukoharjo, Jawa Tengah
-							57169</p>
+						<h3><a>Palembang (Sumatera Selatan)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span>  Ibu kota provinsi Sumatera Selatan, Palembang adalah kota tertua di Indonesia dan terkenal dengan Sungai Musi serta Jembatan Ampera. Kota ini merupakan pusat industri, perdagangan, dan kebudayaan.
+						</p>
 					</div>
 				</div>
 			</div>
@@ -135,20 +127,19 @@
 					<a href="#" class="img" style="background-image: url(images/destinasi_11.jpg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Jam Gadang</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Raya Bukittinggi - Payakumbuh,
-							Benteng Ps. Atas, Kec. Guguk Panjang, Kota Bukittinggi, Sumatera Barat 26136</p>
+						<h3><a>Prabumulih (Sumatera Selatan)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Prabumulih adalah kota penting di jalur kereta api yang menghubungkan Palembang dengan Lubuk Linggau. Kota ini dikenal dengan industri minyak dan gas serta perkebunan karet.
+						</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a href="#" class="img" style="background-image: url(images/destinasi_12.jpg);">
+					<a href="#" class="img" style="background-image: url(images/destinasi_12.png);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Bukit Gronggong</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Patapan, Kec. Beber, Kabupaten
-							Cirebon, Jawa Barat 45172</p>
+						<h3><a>Lubuk Linggau (Sumatera Selatan)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Lubuk Linggau adalah kota yang terletak di bagian barat Sumatera Selatan. Kota ini merupakan pusat perdagangan dan jasa bagi wilayah sekitarnya serta memiliki sejumlah destinasi wisata alam.</p>
 					</div>
 				</div>
 			</div>
@@ -169,25 +160,12 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p>Sonic yang berarti kepercayaan. Ini menandakan website
-					kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
+					<p>Sonic yang berarti kecepatan. Ini menandakan website
+						kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="https://twitter.com/ConfidoTM" target="_blank"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/confidotm/?hl=id" target="_blank"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#" target="_blank"><span class="fa fa-instagram"></span></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md pt-5 border-left">
-				<div class="ftco-footer-widget pt-md-5 mb-4">
-					<h2 class="ftco-heading-2">Maskapai</h2>
-					<ul class="list-unstyled">
-						<li><a class="py-2 d-block">Garuda Indonesia</a></li>
-						<li><a class="py-2 d-block">Citilink</a></li>
-						<li><a class="py-2 d-block">Batik Air</a></li>
-						<li><a class="py-2 d-block">Lion Air</a></li>
-						<li><a class="py-2 d-block">Sriwijaya Air</a></li>
-						<li><a class="py-2 d-block">Air Asia</a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="" target="_blank"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -196,13 +174,12 @@
 					<h2 class="ftco-heading-2">Have a Questions?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Cabe V 91, Pd.
-									Cabe Ilir, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418
-							<li><a href="https://wa.me/6281384002161?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081384002161 Admin
-										1</span></a></li>
-							<li><a href="https://wa.me/6288219983235?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">088219983235 Admin
-										2</span></a></li>
-							<li><a href="https://confido.fikridean.my.id/"><span class="icon fa fa-paper-plane"></span><span class="text">sonic.fikridean.my.id</span></a></li>
+							<li><span class="icon fa fa-map-marker"></span><span class="text">Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</span></li>
+							<li><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081260679408 Admin 1(Petra)
+										</span></a></li>
+							<li><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081364981832 Admin 2(syuja)
+										</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">Sonic@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -217,6 +194,8 @@
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
+					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				</p>
 			</div>
 		</div>
 	</div>

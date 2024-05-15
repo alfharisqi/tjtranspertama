@@ -9,7 +9,7 @@
 		<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 			<div class="col-md-7 ftco-animate">
 				<h1 class="mb-4">Selamat Datang di Sonic</h1>
-				<p class="caps">Aplikasi berbasis website untuk jasa pemesanan tiket kereta api</p>
+				<p class="caps">Aplikasi berbasis website untuk jasa pemesanan tiket Kereta</p>
 				<a href="/orders/create" class="btn btn-primary">Pesan Sekarang!</a>
 			</div>
 		</div>
@@ -27,35 +27,32 @@
 		<div class="row">
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-1.jpg);">
+					<a class="img" style="background-image: url(images/destination-1.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Keraton Yogyakarta</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Rotowijayan Blok No. 1,
-							Panembahan, Kecamatan Kraton, Kota Yogyakarta, Daerah Istimewa Yogyakarta</p>
+						<h3><a>Medan (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Medan adalah ibu kota provinsi Sumatera Utara dan merupakan pusat ekonomi serta transportasi utama di wilayah tersebut. Kota ini terhubung dengan beberapa rute kereta api, termasuk Medan – Kisaran – Rantau Prapat dan Medan – Tebing Tinggi – Siantar, serta jalur ke pelabuhan Belawan.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-2.jpg);">
+					<a class="img" style="background-image: url(images/destination-2.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Tangkuban Perahu</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Cikahuripan, Kec. Lembang, Kabupaten
-							Bandung Barat, Jawa Barat</p>
+						<h3><a>Padang (Sumatera Barat)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> CPadang, ibu kota provinsi Sumatera Barat, adalah kota penting yang terhubung melalui jalur kereta api Padang – Pariaman – Naras dan jalur sejarah ke Bukittinggi dan Sawahlunto. Kota ini juga menjadi destinasi wisata populer.</p>
 
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-3.jpg);">
+					<a class="img" style="background-image: url(images/destination-3.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Monumen Nasional</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Gambir, Kecamatan Gambir, Kota
-							Jakarta Pusat, Daerah Khusus Ibukota Jakarta</p>
+						<h3><a>Palembang (Sumatera Selatan)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Palembang adalah ibu kota provinsi Sumatera Selatan dan merupakan salah satu kota terbesar di Sumatera. Jalur kereta api yang menghubungkan kota ini termasuk Palembang – Prabumulih – Muara Enim – Lubuk Linggau dan Kertapati – Panjang (Lampung).</p>
 
 					</div>
 				</div>
@@ -63,36 +60,33 @@
 
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-4.jpg);">
+					<a class="img" style="background-image: url(images/destination-4.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Lawang Sewu</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Pemuda, Sekayu, Kec. Semarang
-							Tengah, Kota Semarang, Jawa Tengah</p>
+						<h3><a>Pariaman (Sumatera Barat)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Pariaman adalah kota yang terletak di jalur kereta api Padang – Pariaman – Naras. Kota ini dikenal sebagai destinasi wisata pantai dan budaya di Sumatera Barat.</p>
 
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-5.jpg);">
+					<a class="img" style="background-image: url(images/destination-5.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Tanah Lot</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Beraban, Kec. Kediri, Kabupaten
-							Tabanan, Bali</p>
+						<h3><a>Rantau Prapat (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Rantau Prapat adalah kota penting di jalur kereta api Medan – Kisaran – Rantau Prapat. Kota ini sering dikunjungi untuk berbagai keperluan bisnis dan perjalanan.</p>
 
 					</div>
 				</div>
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-6.jpg);">
+					<a class="img" style="background-image: url(images/destination-6.jpeg);">
 					</a>
 					<div class="text p-4">
-						<h3><a>Museum Angkut</a></h3>
-						<p class="location"><span class="fa fa-map-marker"></span> Jl. Terusan Sultan Agung No.2,
-							Ngaglik, Kec. Batu, Kota Batu, Jawa Timur</p>
+						<h3><a>Tebing Tinggi (Sumatera Utara)</a></h3>
+						<p class="location"><span class="fa fa-map-marker"></span> Tebing Tinggi adalah kota yang berada di jalur kereta api Medan – Tebing Tinggi – Siantar. Kota ini merupakan titik transit penting bagi penumpang yang bepergian ke berbagai kota di Sumatera Utara.</p>
 
 					</div>
 				</div>
@@ -129,7 +123,7 @@
 								<div class="d-flex align-items-center">
 									<div class="user-img" style="background-image: url(images/testimoni_1.jpg)"></div>
 									<div class="pl-3">
-										<p class="name">Muhammad Zaidan</p>
+										<p class="name">KING</p>
 									</div>
 								</div>
 							</div>
@@ -150,7 +144,7 @@
 								<div class="d-flex align-items-center">
 									<div class="user-img" style="background-image: url(images/testimoni_2.jpg)"></div>
 									<div class="pl-3">
-										<p class="name">Rizki Nugraha</p>
+										<p class="name">QUEEN</p>
 									</div>
 								</div>
 							</div>
@@ -167,65 +161,19 @@
 									<span class="fa fa-star"></span>
 								</p>
 								<p class="mb-4">Aplikasinya cepat dan mudah digunakan. Tidak sulit untuk dimengerti.
-									Saya rekomendasikan para pencari tiket kereta untuk menggunakan aplikasi sonic
+									Saya rekomendasikan para pencari tiket Kereta untuk menggunakan aplikasi Sonic
 									ini.</p>
 								<div class="d-flex align-items-center">
 									<div class="user-img" style="background-image: url(images/testimoni_3.jpg)"></div>
 									<div class="pl-3">
-										<p class="name">Burhan Sudrajat</p>
+										<p class="name">SLAVE</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="item">
-						<div class="testimony-wrap py-4">
-							<div class="text">
-								<p class="star">
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</p>
-								<p class="mb-4">My friend recommended me this app because I was traveling in
-									Indonesia. It's a good app indeed. But one thing I have to say about it is the lack
-									of language accomodation. I am a foreigner and needing to sometimes look at google
-									translate or ask my friend out for help in order to understand what was written is
-									quite tedious. But fortunately, the app being linear and easy to use makes learning
-									and remembering how to use it very easy. Still, I hope it add the option to choose
-									English language in the future. Thank you Sonic 👍
-								</p>
-								<div class="d-flex align-items-center">
-									<div class="user-img" style="background-image: url(images/testimoni_5.jpg)"></div>
-									<div class="pl-3">
-										<p class="name">Dusan Bogdanovic</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="item">
-						<div class="testimony-wrap py-4">
-							<div class="text">
-								<p class="star">
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-									<span class="fa fa-star"></span>
-								</p>
-								<p class="mb-4">Aplikasinya bagus banget. Gampang digunakan dan tampilannya simpel.
-									Customer servicenya juga bagus.</p>
-								<div class="d-flex align-items-center">
-									<div class="user-img" style="background-image: url(images/testimoni_4.jpg)"></div>
-									<div class="pl-3">
-										<p class="name">Fitri Masruroh</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+
+		
 				</div>
 			</div>
 		</div>
@@ -238,25 +186,12 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p> Sonic yang berarti kepercayaan. Ini menandakan website
+					<p>Sonic yang berarti kecepatan. Ini menandakan website
 						kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="https://twitter.com/ConfidoTM" target="_blank"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/confidotm/?hl=id" target="_blank"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="#" target="_blank"><span class="fa fa-instagram"></span></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md pt-5 border-left">
-				<div class="ftco-footer-widget pt-md-5 mb-4">
-					<h2 class="ftco-heading-2">Maskapai</h2>
-					<ul class="list-unstyled">
-						<li><a class="py-2 d-block">Garuda Indonesia</a></li>
-						<li><a class="py-2 d-block">Citilink</a></li>
-						<li><a class="py-2 d-block">Batik Air</a></li>
-						<li><a class="py-2 d-block">Lion Air</a></li>
-						<li><a class="py-2 d-block">Sriwijaya Air</a></li>
-						<li><a class="py-2 d-block">Air Asia</a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="" target="_blank"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -265,13 +200,12 @@
 					<h2 class="ftco-heading-2">Have a Questions?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Cabe V 91, Pd.
-									Cabe Ilir, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418</span></li>
-							<li><a href="https://wa.me/6281384002161?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081384002161 Admin
-										1</span></a></li>
-							<li><a href="https://wa.me/6288219983235?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">088219983235 Admin
-										2</span></a></li>
-							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">sonic.fikridean.my.id</span></a></li>
+							<li><span class="icon fa fa-map-marker"></span><span class="text">Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</span></li>
+							<li><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081260679408 Admin 1(Petra)
+										</span></a></li>
+							<li><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081364981832 Admin 2(syuja)
+										</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">Sonic@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>
