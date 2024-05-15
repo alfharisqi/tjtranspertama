@@ -94,7 +94,7 @@
                                     </p>
 
                                     <p class="text-muted text-center">
-                                        @if ($user->gender)
+                                        @if ($user->gender!== null)
                                             @if ($user->gender == 1)
                                                 Laki-laki
                                             @elseif($user->gender == 0)
@@ -157,38 +157,20 @@
 
                                                     <div class="form-group row">
                                                         <label for="gender" class="col-sm-2 col-form-label">Jenis:</label>
-                                                        <select name="gender" id="gender" class="form-control col-sm-10"
-                                                            required>
-                                                            @if ($user->gender)
-                                                                @if ($user->gender == 1)
-                                                                    <option value=1 selected>
-                                                                        Laki-laki
-                                                                    </option>
-                                                                    <option value=0>
-                                                                        Perempuan
-                                                                    </option>
-                                                                @else($user->gender == 0)
-                                                                    <option value=1>
-                                                                        Laki-laki
-                                                                    </option>
-                                                                    <option value=0 selected>
-                                                                        Perempuan
-                                                                    </option>
+                                                        <div class="col-sm-10">
+                                                            <select name="gender" id="gender" class="form-control" required>
+                                                                @if ($user->gender !== null)
+                                                                    <option value="1" {{ $user->gender == 1 ? 'selected' : '' }}>Laki-laki</option>
+                                                                    <option value='0' {{ $user->gender == '0' ? 'selected' : '' }}>Perempuan</option>
+                                                                @else
+                                                                    <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                                                                    <option value="1">Laki-laki</option>
+                                                                    <option value="0">Perempuan</option>
                                                                 @endif
-                                                            @else
-                                                            <option selected value="" disabled>
-                                                                Pilih Jenis Kelamin
-                                                            </option>
-                                                                <option value=1>
-                                                                    Laki-laki
-                                                                </option>
-                                                                <option value=0>
-                                                                    Perempuan
-                                                                </option>
-                                                            @endif
-
-                                                        </select>
+                                                            </select>
+                                                        </div>
                                                     </div>
+                                                    
 
                                                     <div class="form-group column">
                                                         <label for="image" class="col-sm-2 col-form-label">Poto
