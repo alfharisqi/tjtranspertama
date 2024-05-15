@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="./"><img class="d-inline-block" src="images/Logo Confido.png" width="200"
+        <a class="navbar-brand" href="./"><img class="d-inline-block" src="images/LogoSonic.png" width="200"
                 alt="logo" /><span class="fw-bold text-primary ms-2"></span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
             aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">

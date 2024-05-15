@@ -11,9 +11,9 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img/ConfidoLogo.png') }}" alt="Confido Logo"
+                <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Confido</span>
+                <span class="brand-text font-weight-light">Sonic</span>
             </a>
 
             <!-- Sidebar Menu -->
@@ -222,7 +222,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Confido &copy; 2022.</strong>
+        <strong>Sonic &copy; 2022.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
         </div>

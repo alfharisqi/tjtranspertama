@@ -169,8 +169,8 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p>Confido berasal dari bahasa Latin, Confido yang berarti kepercayaan. Ini menandakan website kami
-						terpercaya dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
+					<p>Sonic yang berarti kepercayaan. Ini menandakan website
+					kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
 						<li class="ftco-animate"><a href="https://twitter.com/ConfidoTM" target="_blank"><span class="fa fa-twitter"></span></a></li>
 						<li class="ftco-animate"><a href="https://www.instagram.com/confidotm/?hl=id" target="_blank"><span class="fa fa-facebook"></span></a></li>
@@ -202,7 +202,7 @@
 										1</span></a></li>
 							<li><a href="https://wa.me/6288219983235?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">088219983235 Admin
 										2</span></a></li>
-							<li><a href="https://confido.fikridean.my.id/"><span class="icon fa fa-paper-plane"></span><span class="text">confido.fikridean.my.id</span></a></li>
+							<li><a href="https://confido.fikridean.my.id/"><span class="icon fa fa-paper-plane"></span><span class="text">sonic.fikridean.my.id</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -213,7 +213,7 @@
 
 				<p>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Confido &copy;
+					Sonic &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
