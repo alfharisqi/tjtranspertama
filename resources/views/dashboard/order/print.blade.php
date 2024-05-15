@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="page-header">
-                        <img src="{{ asset('dist/img/LogoConfido.png') }}" alt="Confido Logo" width="220">
+                        <img src="{{ asset('dist/img/LogoSonic.png') }}" alt="Sonic Logo" width="220">
                     </h2>
                 </div>
                 <!-- /.col -->
@@ -19,11 +19,11 @@
                     <br>
                     <br>
                     <address>
-                        <strong>Confido</strong><br>
+                        <strong>Sonic</strong><br>
                         Jl. Cabe V 91, Pd. Cabe Ilir<br>
                         Kec. Pamulang, Kota Tangerang Selatan, Banten 15418<br>
                         Phone: 081384002161<br>
-                        Email: confidotiket@gmail.com
+                        Email: sonicticket@gmail.com
                     </address>
                 </div>
                 <!-- /.col -->
