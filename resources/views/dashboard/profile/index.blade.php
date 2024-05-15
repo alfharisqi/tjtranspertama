@@ -56,8 +56,11 @@
                             <div class="card card-primary @can('isAdmin') card-danger @endcan card-outline">
                                 <div class="card-header box-profile d-flex flex-column align-items-center">
                                     <div class="text-center">
-                                        <img class="profile-user-img img-fluid img-circle" src="{{ asset($user->image) }}"
-                                            alt="{{ $user->name }}" style="width: 100px; height: 100px">
+                                        @if(file_exists($user->image))
+                                        <img class="profile-user-img img-fluid img-circle" src="{{ asset($user->image) }}">
+                                        @else
+                                        <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/default.png') }}" alt="Default profile picture">
+                                        @endif
                                     </div>
 
                                     <h3 class="mt-3 profile-username text-center">{{ $user->name }}</h3>
@@ -91,12 +94,14 @@
                                     </p>
 
                                     <p class="text-muted text-center">
-                                        @if ($user->gender == 1)
-                                            Laki-laki
-                                        @elseif($user->gender == 0)
-                                            Perempuan
+                                        @if ($user->gender)
+                                            @if ($user->gender == 1)
+                                                Laki-laki
+                                            @elseif($user->gender == 0)
+                                                Perempuan
+                                            @endif
                                         @else
-                                            belum di set
+                                            Jenis kelamin belum di set
                                         @endif
                                     </p>
 
@@ -146,6 +151,7 @@
                                                             Telepon:</label>
                                                         <input type="text" class="form-control col-sm-10"
                                                             value="{{ old('phone_number', $user->phone_number) }}"
+                                                            placeholder="silakan ketikkan nomor telepon anda"
                                                             name="phone_number" required>
                                                     </div>
 
@@ -153,24 +159,26 @@
                                                         <label for="gender" class="col-sm-2 col-form-label">Jenis:</label>
                                                         <select name="gender" id="gender" class="form-control col-sm-10"
                                                             required>
+                                                            @if ($user->gender)
+                                                                @if ($user->gender == 1)
+                                                                    <option value=1 selected>
+                                                                        Laki-laki
+                                                                    </option>
+                                                                    <option value=0>
+                                                                        Perempuan
+                                                                    </option>
+                                                                @else($user->gender == 0)
+                                                                    <option value=1>
+                                                                        Laki-laki
+                                                                    </option>
+                                                                    <option value=0 selected>
+                                                                        Perempuan
+                                                                    </option>
+                                                                @endif
+                                                            @else
                                                             <option selected value="" disabled>
                                                                 Pilih Jenis Kelamin
                                                             </option>
-                                                            @if ($user->gender == 1)
-                                                                <option value=1 selected>
-                                                                    Laki-laki
-                                                                </option>
-                                                                <option value=0>
-                                                                    Perempuan
-                                                                </option>
-                                                            @elseif ($user->gender == 0)
-                                                                <option value=1>
-                                                                    Laki-laki
-                                                                </option>
-                                                                <option value=0 selected>
-                                                                    Perempuan
-                                                                </option>
-                                                            @else
                                                                 <option value=1>
                                                                     Laki-laki
                                                                 </option>
@@ -219,7 +227,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Sonic &copy; 2022.</strong>
+            <strong>Sonic &copy; 2024.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
             </div>
