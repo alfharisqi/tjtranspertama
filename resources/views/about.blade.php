@@ -29,7 +29,9 @@
 							<div class="col-md-12 heading-section ftco-animate">
 								<span class="subheading">About Us</span>
 								<h2 class="mb-4">SONIC</h2>
-								<p>Terinspirasi dari Sonic Biru.</p>
+								<p>Terinspirasi dari Sonic the Hedgehog. Sonic terkenal karena kecepatannya yang luar biasa, yang mengajarkan nilai-nilai penting seperti ketangkasan, kemampuan untuk merespons dengan cepat terhadap tantangan, dan semangat yang tak kenal lelah. Ketangkasan Sonic menggambarkan pentingnya menjadi lincah dan siap menghadapi perubahan, sementara respons cepatnya menunjukkan bagaimana kesiapan dan kecepatan dalam bertindak dapat membantu mengatasi rintangan dengan efisien. Semangat yang tak kenal lelah yang dimiliki Sonic menginspirasi kita untuk terus maju dan tidak pernah menyerah, meskipun dihadapkan pada kesulitan atau tantangan besar. Sonic adalah simbol dari dedikasi dan kegigihan, mengingatkan kita bahwa dengan tekad dan semangat yang kuat, kita dapat mencapai tujuan kita.
+
+								</p>
 							</div>
 						</div>
 					</div>
@@ -54,35 +56,9 @@
 					<div class="testimony-wrap py-4">
 						<div class="text">
 							<div class="d-flex align-items-center">
-								<div class="user-img" style="background-image: url(images/carlos.png)"></div>
+								<div class="user-img" style="background-image: url(images/bane2.jpg)"></div>
 								<div class="pl-3">
 									<p class="name">Brisbane Sihombing</p>
-									<span class="position">CEO</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimony-wrap py-4">
-						<div class="text">
-							<div class="d-flex align-items-center">
-								<div class="user-img" style="background-image: url(images/carlos.png)"></div>
-								<div class="pl-3">
-									<p class="name">Mayadi Silalahi</p>
-									<span class="position">Designer</span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimony-wrap py-4">
-						<div class="text">
-							<div class="d-flex align-items-center">
-								<div class="user-img" style="background-image: url(images/carlos.png)"></div>
-								<div class="pl-3">
-									<p class="name">Petra Keliat</p>
 									<span class="position">Back End Developer</span>
 								</div>
 							</div>
@@ -93,9 +69,35 @@
 					<div class="testimony-wrap py-4">
 						<div class="text">
 							<div class="d-flex align-items-center">
-								<div class="user-img" style="background-image: url(images/carlos.png)"></div>
+								<div class="user-img" style="background-image: url(images/mayadi.jpg)"></div>
+								<div class="pl-3">
+									<p class="name">Mayadi Silalahi</p>
+									<span class="position">Back End Developerk</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="testimony-wrap py-4">
+						<div class="text">
+							<div class="d-flex align-items-center">
+								<div class="user-img" style="background-image: url(images/paskal.jpg)"></div>
 								<div class="pl-3">
 									<p class="name">Paskal Manik</p>
+									<span class="position">Back End Developer</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item">
+					<div class="testimony-wrap py-4">
+						<div class="text">
+							<div class="d-flex align-items-center">
+								<div class="user-img" style="background-image: url(images/petra.jpg)"></div>
+								<div class="pl-3">
+									<p class="name">Petra Keliat</p>
 									<span class="position">Front End Developer</span>
 								</div>
 							</div>
@@ -107,7 +109,7 @@
 					<div class="testimony-wrap py-4">
 						<div class="text">
 							<div class="d-flex align-items-center">
-								<div class="user-img" style="background-image: url(images/carlos.png)"></div>
+								<div class="user-img" style="background-image: url(images/jak.jpg)"></div>
 								<div class="pl-3">
 									<p class="name">Syuja Aqilsyah</p>
 									<span class="position">Front End Developer</span>
@@ -128,25 +130,12 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p>Sonic yang berarti kepercayaan. Ini menandakan website
+					<p>Sonic yang berarti kecepatan. Ini menandakan website
 						kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="https://twitter.com/ConfidoTM" target="_blank"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-twitter"></span></a></li>
 						<li class="ftco-animate"><a href="" target="_blank"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/confidotm/?hl=id" target="_blank"><span class="fa fa-instagram"></span></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md pt-5 border-left">
-				<div class="ftco-footer-widget pt-md-5 mb-4">
-					<h2 class="ftco-heading-2">Maskapai</h2>
-					<ul class="list-unstyled">
-						<li><a class="py-2 d-block">Garuda Indonesia</a></li>
-						<li><a class="py-2 d-block">Citilink</a></li>
-						<li><a class="py-2 d-block">Batik Air</a></li>
-						<li><a class="py-2 d-block">Lion Air</a></li>
-						<li><a class="py-2 d-block">Sriwijaya Air</a></li>
-						<li><a class="py-2 d-block">Air Asia</a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -155,13 +144,12 @@
 					<h2 class="ftco-heading-2">Have a Questions?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon fa fa-map-marker"></span><span class="text">Jl. Cabe V 91, Pd.
-									Cabe Ilir, Kec. Pamulang, Kota Tangerang Selatan, Banten 15418</span></li>
-							<li><a href="https://wa.me/6281384002161?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081384002161 Admin
-										1</span></a></li>
-							<li><a href="https://wa.me/6288219983235?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">088219983235 Admin
-										2</span></a></li>
-							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">sonic.fikridean.my.id</span></a></li>
+							<li><span class="icon fa fa-map-marker"></span><span class="text">Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</span></li>
+							<li><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081260679408 Admin 1(Petra)
+										</span></a></li>
+							<li><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081364981832 Admin 2(syuja)
+										</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">Sonic@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>

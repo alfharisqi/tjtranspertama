@@ -271,7 +271,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Sonic &copy; 2022.</strong>
+            <strong>Sonic &copy; 2024.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
             </div>
