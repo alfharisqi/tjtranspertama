@@ -2,8 +2,13 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
         <div class="image">
-            <img src="{{ asset(Auth::user()->image) }}" class="img-circle elevation-2" style="width: 50px; height: 50px;"
-                alt="{{ Auth::user()->name }}">
+            <a href="/users/{{ Auth::id() }}" class="d-block" style="{{ Request::is('users*') ? 'color: white' : '' }}; word-wrap: break-word;">
+                @if (Auth::check() && Auth::user()->image && file_exists(public_path(Auth::user()->image)))
+                    <img src="{{ asset(Auth::user()->image) }}" class="img-circle elevation-2" style="width: 50px; height: 50px;" alt="{{ Auth::user()->name }}">
+                @else
+                    <img src="{{ asset('images/default.png') }}" class="img-circle elevation-2" style="width: 50px; height: 50px;" alt="{{ Auth::user()->name }}">
+                @endif
+            </a>
         </div>
         <div class="info">
             <a href="/users/{{ Auth::id() }}" class="d-block"
