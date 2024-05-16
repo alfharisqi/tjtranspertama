@@ -18,7 +18,7 @@
 <section class="ftco-section ftco-no-pb contact-section mb-4">
 	<div class="container">
 		<div class="row d-flex contact-info">
-			<div class="col-md-3 d-flex">
+			<div class="col-md-4 d-flex">
 				<div class="align-self-stretch box p-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="fa fa-map-marker"></span>
@@ -27,39 +27,29 @@
 					<p>Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</p>
 				</div>
 			</div>
-			<div class="col-md-3 d-flex">
+			<div class="col-md-4 d-flex">
 				<div class="align-self-stretch box p-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="fa fa-phone"></span>
 					</div>
-					<h3 class="mb-2">Contact Number</h3>
-					<p><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah">081260679408 Admin 1(Petra)
-							</a></p>
-					<p><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah">081364981832 Admin 1(Syuja)
-							</a></p>
+					<h3 class="mb-4">Contact Number</h3>
+					<p><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah">081260679408 Admin 1(Petra)</a></p>
+					<p><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah">081364981832 Admin 1(Syuja)</a></p>
 				</div>
 			</div>
-			<div class="col-md-3 d-flex">
+			<div class="col-md-4 d-flex">
 				<div class="align-self-stretch box p-4 text-center">
 					<div class="icon d-flex align-items-center justify-content-center">
 						<span class="fa fa-paper-plane"></span>
 					</div>
-					<h3 class="mb-2">Email Address</h3>
+					<h3 class="mb-4">Email Address</h3>
 					<p><a href="mailto:sonicticket@gmail.com">sonic@gmail.com</a></p>
-				</div>
-			</div>
-			<div class="col-md-3 d-flex">
-				<div class="align-self-stretch box p-4 text-center">
-					<div class="icon d-flex align-items-center justify-content-center">
-						<span class="fa fa-globe"></span>
-					</div>
-					<h3 class="mb-2">Website</h3>
-					<p><a href="https://confido.fikridean.my.id/">sonic.fikridean.my.id</a></p>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
 
 <section class="ftco-section contact-section ftco-no-pt mt-2">
 	<div class="container">
