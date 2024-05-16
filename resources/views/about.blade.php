@@ -21,7 +21,7 @@
 			<div class="col-md-12 about-intro">
 				<div class="row">
 					<div class="col-md-6 d-flex align-items-stretch">
-						<div class="img d-flex w-100 align-items-center justify-content-center" style="background-image:url(images/about-1.jpg);">
+						<div class="img d-flex w-100 align-items-center justify-content-center" style="background-image:url(images/sonicbiru.jpg);">
 						</div>
 					</div>
 					<div class="col-md-6 pl-md-5 py-5">

@@ -27,7 +27,7 @@
 		<div class="row">
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-1.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_1.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Medan (Sumatera Utara)</a></h3>
@@ -37,7 +37,7 @@
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-2.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_7.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Padang (Sumatera Barat)</a></h3>
@@ -48,7 +48,7 @@
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-3.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_10.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Palembang (Sumatera Selatan)</a></h3>
@@ -60,7 +60,7 @@
 
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-4.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_8.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Pariaman (Sumatera Barat)</a></h3>
@@ -71,7 +71,7 @@
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-5.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_3.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Rantau Prapat (Sumatera Utara)</a></h3>
@@ -82,7 +82,7 @@
 			</div>
 			<div class="col-md-4 ftco-animate">
 				<div class="project-wrap">
-					<a class="img" style="background-image: url(images/destination-6.jpeg);">
+					<a class="img" style="background-image: url(images/destinasi_5.jpeg);">
 					</a>
 					<div class="text p-4">
 						<h3><a>Tebing Tinggi (Sumatera Utara)</a></h3>
