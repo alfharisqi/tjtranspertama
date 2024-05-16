@@ -62,7 +62,7 @@ Aplikasi Sonic bertujuan untuk menyajikan proses transaksi pemesanan tiket yang 
 
 - <h3>Key:Generate</h3>
 
-     Command -> `php artisan key:generate</h2>`
+     Command -> `php artisan key:generate`
      
 - <h3>Jalankan Migrate</h3>
 
