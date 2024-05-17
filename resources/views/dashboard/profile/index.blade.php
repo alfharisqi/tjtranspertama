@@ -173,7 +173,7 @@
                                                     
 
                                                     <div class="form-group row">
-                                                        <label for="image" class="col-sm-2 col-form-label">Poto Profil:</label>
+                                                        <label for="image" class="col-sm-2 col-form-label">Foto Profil:</label>
                                                         <div class="col-sm-10">
                                                             @if ($user->image)
                                                                 <div class="d-flex align-items-center">
@@ -242,7 +242,8 @@
             document.getElementById('deleteProfileImageForm').submit();
         }
     });
-
+    </script>
+    <script>
         document.getElementById('logout-button').addEventListener('click', function(e) {
             e.preventDefault();
             if (confirm('Apakah Anda yakin ingin keluar?')) {
