@@ -60,15 +60,37 @@ Aplikasi Sonic bertujuan untuk menyajikan proses transaksi pemesanan tiket yang 
 
 # Panduan Menjalankan Source Code
 
+- <h3>Buat Folder di htdocs</h3>
+     
+     Buka git bash di htdocs
+     Command -> `git init`
+     Command -> `git clone https://github.com/Mayadi21/tubes-pwl-kelompok5.git`
+     Command -> `cd tubes-pwl-kelompok5`
+
+- <h3>Copy File .env</h3>
+
+     Command -> `cp .env.example .env`
+
+- <h3>Buat database anda</h3>
+     Silakan buat database anda.
+
+     Lalu, Ganti nama database pada file .env anda. {DB_DATABASE=`nama_db`}
+     
 - <h3>Key:Generate</h3>
 
      Command -> `php artisan key:generate`
+
      
 - <h3>Jalankan Migrate</h3>
 
-     Command -> `php artisan key:migrate`
+     Command -> `php artisan migrate`
 
 - <h3>Modifikasi File Seeder dan Jalankan</h3>
     Dalam File Seeder, Ubah email admin mayadisilalahi@gmailcom menjadi email yang anda miliki.
     
     Command jalankan Seeder -> ` php artisan db:seed --class=DummyUsersSeeder `
+
+- <h3>Run Code</h3>
+     Command -> `php artisan ser`
+
+
