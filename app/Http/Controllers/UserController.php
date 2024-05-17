@@ -6,6 +6,8 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class UserController extends Controller
 {
@@ -117,6 +119,24 @@ class UserController extends Controller
             return redirect('/users' . '/' . Auth::id());
         }
     }
+
+    public function deleteImage(Request $request)
+    {
+        $user = User::findOrFail(Auth::id());
+        
+        // Hapus file foto profil dari storage
+        if ($user->image) {
+            Storage::delete('public/' . $user->image);
+            $user->image = null;
+            $user->save();
+        }
+    
+        if (Gate::allows('isAdmin')) {
+            return redirect('/users')->with('update', 'Data user berhasil diubah');
+        } else {
+            return redirect('/users' . '/' . Auth::id());
+        }    }
+    
 
     /**
      * Remove the specified resource from storage.

@@ -172,14 +172,20 @@
                                                     </div>
                                                     
 
-                                                    <div class="form-group column">
-                                                        <label for="image" class="col-sm-2 col-form-label">Poto
-                                                            Profil:</label>
-
-                                                        <img style="max-width: 100px" src="{{ asset($user->image) }}"
-                                                            alt="User Image">
-
-                                                        <input type="file" class="form-control1" name="image">
+                                                    <div class="form-group row">
+                                                        <label for="image" class="col-sm-2 col-form-label">Poto Profil:</label>
+                                                        <div class="col-sm-10">
+                                                            @if ($user->image)
+                                                                <div class="d-flex align-items-center">
+                                                                    <img style="max-width: 100px" src="{{ asset($user->image) }}"
+                                                                    alt="User Image">
+                                                                    <button type="button" id="deleteProfileImage" class="btn btn-danger ml-2">Hapus Gambar</button>
+                                                                </div>
+                                                            @else
+                                                                <img style="max-width: 100px" src="/path/to/default/image.png" alt="User Image">
+                                                            @endif
+                                                            <input type="file" class="form-control mt-2" name="image" value="">
+                                                        </div>
                                                     </div>
 
 
@@ -192,6 +198,13 @@
 
                                                 </div>
                                             </form>
+
+                                            <form id="deleteProfileImageForm" action="{{ route('user.deleteImage') }}" method="POST" style="display: none;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                            </form>
+                                            
                                         </div>
                                         <!-- /.tab-pane -->
                                     </div>
@@ -224,6 +237,12 @@
     <!-- ./wrapper -->
 
     <script>
+        document.getElementById('deleteProfileImage').addEventListener('click', function() {
+        if (confirm('Anda yakin ingin menghapus foto profil?')) {
+            document.getElementById('deleteProfileImageForm').submit();
+        }
+    });
+
         document.getElementById('logout-button').addEventListener('click', function(e) {
             e.preventDefault();
             if (confirm('Apakah Anda yakin ingin keluar?')) {
