@@ -5,7 +5,7 @@
 # Web Developer
 | NIM | Nama Anggota | Role |
 |-----|-----------|------|
-|231402001|[Brisbane Jovan Rivaldi Sihombing](http://instagram.com/banejrs)| Back-end |
+|231402001|[Brisbane Jovan Rivaldi Sihombing](http://instagram.com/brisbanejrs)| Back-end |
 |231402046|[Mayadi Alamsyah Putra Silalahi](http://instagram.com/mydisllhi)| Back-end |
 |231402070|[Petra Igor Keliat](http://instagram.com/petra_ik)| Front-end |
 |231402128|[Paskal Irvaldi Manik](http://instagram.com/paskalmanikk)| Back-end |

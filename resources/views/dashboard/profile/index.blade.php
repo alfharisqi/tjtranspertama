@@ -108,9 +108,9 @@
                                     <div class="card-footer">
                                         <div class="row">
                                             <div class="col-sm-12 d-flex justify-content-center">
-                                                <form action="{{ route('logout') }}" method="POST">
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST">
                                                     @csrf
-                                                    <button class="btn btn-danger w-100">Logout</button>
+                                                    <button type="button" class="btn btn-danger w-100" id="logout-button">Logout</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -222,4 +222,13 @@
         <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
+
+    <script>
+        document.getElementById('logout-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('Apakah Anda yakin ingin keluar?')) {
+                document.getElementById('logout-form').submit();
+            }
+        });
+    </script>
 @endsection
