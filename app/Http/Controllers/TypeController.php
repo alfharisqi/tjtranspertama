@@ -42,10 +42,12 @@ class TypeController extends Controller
             'flight_at' => ['required']
         ]);
 
-        $check = Type::where('name', $validatedData['name'])->where('name', $validatedData['name'])->first();
+        $check = Type::where('name', $validatedData['name'])
+            ->where('flight_at', $validatedData['flight_at'])
+            ->first();
 
         if ($check) {
-            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut sudah ada di database!');
+            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut dengan jam terbang yang sama sudah ada di database!');
         }
 
         Type::create($validatedData);
@@ -89,10 +91,13 @@ class TypeController extends Controller
             'flight_at' => ['required']
         ]);
 
-        $check = Type::where('id', '!=', $type->id)->where('name', $validatedData['name'])->first();
+        $check = Type::where('id', '!=', $type->id)
+            ->where('name', $validatedData['name'])
+            ->where('flight_at', $validatedData['flight_at'])
+            ->first();
 
         if ($check) {
-            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut sudah ada di database!');
+            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut dengan jam terbang yang sama sudah ada di database!');
         }
 
         $type->update($validatedData);
