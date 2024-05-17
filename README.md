@@ -1,66 +1,74 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><img src="../main/public/images/LogoSonic.png" width="600" alt="Aplikasi Logo"></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<br><br>
 
-## About Laravel
+# Web Developer
+| NIM | Nama Anggota | Role |
+|-----|-----------|------|
+|231402001|[Brisbane Jovan Rivaldi Sihombing](http://instagram.com/brisbanejrs)| Back-end |
+|231402046|[Mayadi Alamsyah Putra Silalahi](http://instagram.com/mydisllhi)| Back-end |
+|231402070|[Petra Igor Keliat](http://instagram.com/petra_ik)| Front-end |
+|231402128|[Paskal Irvaldi Manik](http://instagram.com/paskalmanikk)| Back-end |
+|231402134|[Syuja Aqilsyah](http://instagram.com/syujaaql)| Front-end |
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br><br><br><br>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+# About Sonic
+Aplikasi Web ***Sonic*** merupakan **Aplikasi pemesanan _tiket kereta api_**.
+Aplikasi Sonic bertujuan untuk menyajikan proses transaksi pemesanan tiket yang nyaman serta efisien.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+<br><br><br><br>
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+# Fitur dalam Sonic
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- <h3>Login Multilevel User</h3>
+     Aplikasi ini dapat login multilever user menggunakan 2 role, yaiut customer dan admin.
 
-### Premium Partners
+- <h3>Forgot Password</h3>
+     Kami memungkinkan pengguna untuk mendapat email untuk mereset password jika pengguna melupakan password akun.
+     
+- <h3>Email Verification</h3>
+     Email untuk verifikasi akun yang bertujuan untuk autentikasi akan dikirim setelah melakukan registrasi akun
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- <h3>Update Profile</h3>
+     Pengguna dapat memperbarui data profil.
+     
+ - <h3>Hapus Akun</h3>
+     Admin dapat menghapus akun beserta datanya jika diperlukan.
+     
+- <h3>Pemesanan Tiket Kereta</h3>
+     Pengguna dapat memesan tiket kereta api yang tersedia di aplikasi.
+     
+- <h3>Saran/Report</h3>
+     Pengguna dapat mengirimkan pesan kepada admin berupa saran maupun report berdasarkan pengalaman menggunakan aplikasi.
 
-## Contributing
+- <h3>Printing</h3>
+     Admin dapat mencetak data users, tiket, kereta api, dan jadwal keberangkatan.
+     
+     Sedangkan untuk pengguna, dapat mencetak data tiket.
+  
+- <h3>Pembuatan Jadwal Keberangkatan</h3>
+     Admin dapat membuat jadwal Keberangkatan Kereta Api.
+     
+- <h3>Pagination</h3>
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<br><br><br>
 
-## Code of Conduct
+# Panduan Menjalankan Source Code
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- <h3>Key:Generate</h3>
 
-## Security Vulnerabilities
+     Command -> `php artisan key:generate`
+     
+- <h3>Jalankan Migrate</h3>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+     Command -> `php artisan key:migrate`
 
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- <h3>Modifikasi File Seeder dan Jalankan</h3>
+    Dalam File Seeder, Ubah email admin mayadisilalahi@gmailcom menjadi email yang anda miliki.
+    
+    Command jalankan Seeder -> ` php artisan db:seed --class=DummyUsersSeeder `

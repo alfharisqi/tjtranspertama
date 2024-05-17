@@ -84,6 +84,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // User Route
     Route::resource('/users', UserController::class);
 
+    // routes/web.php
+Route::delete('/profile/delete-image', [UserController::class, 'deleteImage'])->name('user.deleteImage');
+
+
     // Check Price Route
     Route::get('/checkprice', [OrderController::class, 'checkprice']);
 });
