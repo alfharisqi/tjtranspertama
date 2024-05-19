@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Sonic') }}</title>
-    <link rel="icon" type="image/png" href="{{ asset('favicon22.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
 
     <!-- Fonts -->
