@@ -18,6 +18,7 @@ class DummyUsersSeeder extends Seeder
                 'name'=>'Mas admin',
                 'email'=>'mayadisilalahi@gmail.com',
                 'role'=>'admin',
+                'email_verified_at'=> now(),
                 'password'=>bcrypt('admin12345')
             ]
             ];

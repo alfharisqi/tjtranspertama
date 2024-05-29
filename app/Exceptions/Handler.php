@@ -17,7 +17,7 @@ class Handler extends ExceptionHandler
         }
 
         // Redirect to email verification if accessing routes that require it
-        if ($request->is('print') || $request->is('printpdf') || $request->is('complaints/*') || $request->is('dashboard') || $request->is('orders/*') || $request->is('transactions/*') || $request->is('airlines/*') || $request->is('types/*') || $request->is('tracks/*') || $request->is('tickets/*') || $request->is('prices/*') || $request->is('methods/*') || $request->is('users/*')) {
+        if ($request->is('print') || $request->is('printpdf') || $request->is('complaints/*') || $request->is('dashboard') || $request->is('orders/*') || $request->is('transactions/*') || $request->is('trains/*') || $request->is('types/*') || $request->is('tracks/*') || $request->is('tickets/*') || $request->is('prices/*') || $request->is('methods/*') || $request->is('users/*')) {
             return Redirect::guest(URL::route('verification.notice'));
         }
 

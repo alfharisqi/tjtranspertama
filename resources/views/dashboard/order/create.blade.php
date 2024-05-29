@@ -160,25 +160,25 @@
                                             }
                                         </script>
                                         <div class="form-group row">
-                                            <label for="airline_id" class="col-sm-2 col-form-label">Maskapai :</label>
+                                            <label for="train_id" class="col-sm-2 col-form-label">Maskapai :</label>
                                             <div class="col-sm-5">
-                                                <select class="form-control" id="airline" name="airline_id" required>
-                                                    @if (old('airline_id'))
-                                                        <option value={{ old('airline_id') }}>
-                                                            {{ $airlines->where('id', old('airline_id'))->first()->name }}
+                                                <select class="form-control" id="train" name="train_id" required>
+                                                    @if (old('train_id'))
+                                                        <option value={{ old('train_id') }}>
+                                                            {{ $trains->where('id', old('train_id'))->first()->name }}
                                                         </option>
                                                     @else
                                                         <option disabled selected>-- Pilih Maskapai --</option>
                                                     @endif
-                                                    @foreach ($airlines as $airline)
-                                                        @if ($airline->id != old('airline_id'))
-                                                            <option value={{ $airline->id }}>
-                                                                {{ ucfirst($airline->name) }}
+                                                    @foreach ($trains as $train)
+                                                        @if ($train->id != old('train_id'))
+                                                            <option value={{ $train->id }}>
+                                                                {{ ucfirst($train->name) }}
                                                             </option>
                                                         @endif
                                                     @endforeach
                                                 </select>
-                                                @if ($errors->has('airline_id'))
+                                                @if ($errors->has('train_id'))
                                                     <div class="invalid-feedback">
                                                         Pilih maskapai dengan benar!
                                                     </div>
@@ -186,7 +186,7 @@
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group">
-                                                    <select name="type_id" class="form-control" id="airline_class" required>
+                                                    <select name="type_id" class="form-control" id="train_class" required>
                                                         @if (old('type_id'))
                                                             <option value={{ old('type_id') }}>
                                                                 {{ $types->where('id', old('type_id'))->first()->name }}
@@ -204,7 +204,7 @@
                                                             @endif
                                                         @endforeach
                                                     </select>
-                                                    @if ($errors->has('airline_id'))
+                                                    @if ($errors->has('train_id'))
                                                         <div class="invalid-feedback">
                                                             Pilih jenis maskapai dengan benar!
                                                         </div>
@@ -599,8 +599,8 @@
         const checkPriceButton = document.getElementById("checkPriceButton");
         const pickup = document.getElementById("keberangkatan");
         const destination = document.getElementById("tujuan");
-        const airline = document.getElementById("airline");
-        const airline_class = document.getElementById("airline_class");
+        const train = document.getElementById("train");
+        const train_class = document.getElementById("train_class");
         const checkTicketButton = document.getElementById('checkTicketButton');
         const ticketsShelf = document.getElementById('tickets_shelf');
         const checkTicketButton2 = document.getElementById('checkTicketButton2');
@@ -608,7 +608,7 @@
 
         checkTicketButton.addEventListener('click', function() {
             fetch(
-                    `/checkprice?airline_id=${airline.value}&type_id=${airline_class.value}&from_route=${pickup.value}&to_route=${destination.value}`
+                    `/checkprice?train_id=${train.value}&type_id=${train_class.value}&from_route=${pickup.value}&to_route=${destination.value}`
                 )
                 .then(response => {
                     return response.json();
@@ -623,7 +623,7 @@
 
         checkTicketButton2.addEventListener('click', function() {
             fetch(
-                    `/checkprice?airline_id=${airline.value}&type_id=${airline_class.value}&from_route=${destination.value}&to_route=${pickup.value}`
+                    `/checkprice?train_id=${train.value}&type_id=${train_class.value}&from_route=${destination.value}&to_route=${pickup.value}`
                 )
                 .then(response => {
                     return response.json();

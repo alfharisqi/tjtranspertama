@@ -6,7 +6,7 @@ use App\Http\Controllers\ComplaintController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TransactionController;
-use App\Http\Controllers\AirlineController;
+use App\Http\Controllers\TrainController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\TrackController;
 use App\Http\Controllers\TicketController;
@@ -63,8 +63,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Transaction Route
     Route::resource('/transactions', TransactionController::class);
 
-    // Airline Route
-    Route::resource('/airlines', AirlineController::class)->middleware('can:isAdmin');
+    // Train Route
+    Route::resource('/trains', TrainController::class)->middleware('can:isAdmin');
 
     // Type Route
     Route::resource('/types', TypeController::class)->middleware('can:isAdmin');

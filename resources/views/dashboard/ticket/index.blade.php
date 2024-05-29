@@ -95,21 +95,21 @@
 
                                                                 <div class="modal-body">
                                                                     <div class="form-group row">
-                                                                        <label for="airline_id"
+                                                                        <label for="train_id"
                                                                             class="col-sm-2 col-form-label">Maskapai</label>
-                                                                        <select name="airline_id" id="airline_id"
+                                                                        <select name="train_id" id="train_id"
                                                                             class="form-control col-sm-10" required>
                                                                             <option selected value="" disabled>Pilih
                                                                                 Maskapai
                                                                             </option>
-                                                                            @foreach ($airlines as $airline)
-                                                                                @if (old('airline_id') == $airline->id)
-                                                                                    <option value="{{ $airline->id }}"
+                                                                            @foreach ($trains as $train)
+                                                                                @if (old('train_id') == $train->id)
+                                                                                    <option value="{{ $train->id }}"
                                                                                         selected>
-                                                                                        {{ $airline->name }}</option>
+                                                                                        {{ $train->name }}</option>
                                                                                 @else
-                                                                                    <option value="{{ $airline->id }}">
-                                                                                        {{ $airline->name }}</option>
+                                                                                    <option value="{{ $train->id }}">
+                                                                                        {{ $train->name }}</option>
                                                                                 @endif
                                                                             @endforeach
                                                                         </select>
@@ -219,8 +219,8 @@
                                                         {{ $loop->iteration }}
                                                     </td>
                                                     <td>
-                                                        @isset($ticket->airline->name)
-                                                            {{ $ticket->airline->name }}
+                                                        @isset($ticket->train->name)
+                                                            {{ $ticket->train->name }}
                                                         @else
                                                             Tidak dapat ditampilkan
                                                         @endisset
