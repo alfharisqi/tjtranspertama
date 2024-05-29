@@ -18,7 +18,6 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->string('order_code');
             $table->foreignId('ticket_id');
-            $table->boolean('round_trip');
             $table->date('go_date');
             $table->integer('amount');
             $table->timestamps();

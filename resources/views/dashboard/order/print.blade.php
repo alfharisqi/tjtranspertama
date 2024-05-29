@@ -20,8 +20,8 @@
                     <br>
                     <address>
                         <strong>Sonic</strong><br>
-                        Jl. Cabe V 91, Pd. Cabe Ilir<br>
-                        Kec. Pamulang, Kota Tangerang Selatan, Banten 15418<br>
+                        Jl. Dr. Sudirman<br>
+                        Kec. Medan Barat<br>
                         Phone: 081384002161<br>
                         Email: sonicticket@gmail.com
                     </address>
@@ -70,12 +70,11 @@
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Maskapai</th>
+                                <th>Kereta</th>
                                 <th>Kelas</th>
                                 <th>Rute</th>
-                                <th>Kelas</th>
                                 <th>Tanggal Pergi</th>
-                                <th>Jam Terbang</th>
+                                <th>Jadwal Perjalanan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -83,12 +82,11 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $order->ticket->train->name }}</td>
-                                    <td>{{ $order->ticket->type->name }}</td>
+                                    <td>{{ $order->ticket->train->class }}</td>
                                     <td>{{ $order->ticket->track->from_route }} - {{ $order->ticket->track->to_route }}
                                     </td>
-                                    <td>{{ $order->ticket->train->class }}</td>
                                     <td>{{ $order->go_date }}</td>
-                                    <td>{{ $order->ticket->type->leave_at }} WIB</td>
+                                    <td>{{ $order->ticket->departure_time }} s.d {{ $order->ticket->arrival_time }}WIB</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -114,7 +112,6 @@
                             </tr>
                         </table>
                     </div>
-                    <p class="lead">Your Payment Was Successful &nbsp; &nbsp;<i class="fas fa-check"></i> <br></p>
 
                 </div>
                 <!-- /.col -->
