@@ -105,16 +105,7 @@
                     <a href="/trains" class="nav-link {{ Request::is('trains') ? 'active' : '' }}">
                         📜
                         <p>
-                            Maskapai
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="/types" class="nav-link {{ Request::is('types') ? 'active' : '' }}">
-                        📝
-                        <p>
-                            Kelas Maskapai
+                            Kereta
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>
@@ -123,7 +114,7 @@
                     <a href="/tracks" class="nav-link {{ Request::is('tracks') ? 'active' : '' }}">
                         📚
                         <p>
-                            Rute Penerbangan
+                            Rute Berangkat
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>

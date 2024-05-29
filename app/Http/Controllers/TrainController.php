@@ -86,7 +86,7 @@ class TrainController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
-            'class' => ['required', 'min:1', 'max:3'],
+            'class' => ['required', 'min:3', 'max:50'],
         ]);
 
         $check = Train::where('id', '!=', $train->id)->where('name', $validatedData['name'])->where('class', $validatedData['class'])->first();

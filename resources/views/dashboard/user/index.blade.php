@@ -10,7 +10,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo"
+                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3">
                 <span class="brand-text font-weight-light">Sonic</span>
             </a>

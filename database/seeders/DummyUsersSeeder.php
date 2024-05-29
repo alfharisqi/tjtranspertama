@@ -14,13 +14,16 @@ class DummyUsersSeeder extends Seeder
     public function run(): void
     {
         $userData = [
-            [   'id' => 1,
+            [   
+                'id' => 1,
                 'name'=>'Mas admin',
                 'email'=>'mayadisilalahi@gmail.com',
                 'role'=>'admin',
                 'email_verified_at'=> now(),
-                'password'=>bcrypt('admin12345')
+                'password'=>bcrypt('admin12345'),
+            
             ]
+
             ];
 
             foreach($userData as $key => $val){
