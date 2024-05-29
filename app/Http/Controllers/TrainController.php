@@ -39,10 +39,10 @@ class TrainController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
-            'peron' => ['required', 'min:3', 'max:10'],
+            'class' => ['required', 'min:3', 'max:10'],
         ]);
 
-        $check = Train::where('name', $validatedData['name'])->first();
+        $check = Train::where('name', $validatedData['name'])->where('class',  $validatedData['class'])->first();
 
         if ($check) {
             return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');
@@ -86,10 +86,10 @@ class TrainController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
-            'peron' => ['required', 'min:1', 'max:3'],
+            'class' => ['required', 'min:1', 'max:3'],
         ]);
 
-        $check = Train::where('id', '!=', $train->id)->where('name', $validatedData['name'])->where('peron', $validatedData['peron'])->first();
+        $check = Train::where('id', '!=', $train->id)->where('name', $validatedData['name'])->where('class', $validatedData['class'])->first();
 
         if ($check) {
             return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');

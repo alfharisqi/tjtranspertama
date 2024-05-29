@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('from_route');
             $table->string('to_route');
+            $table->time('travel_time');
             $table->timestamps();
         });
     }

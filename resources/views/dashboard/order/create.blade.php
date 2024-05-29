@@ -2,7 +2,7 @@
     $routeFrom = [];
     $routeTo = [];
 
-    foreach ($routes as $route) {
+    foreach ($tracks as $route) {
         array_push($routeFrom, $route->from_route);
         array_push($routeTo, $route->to_route);
     }
@@ -91,76 +91,28 @@
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Rute :</label>
                                             <div class="col-sm-5">
-                                                <select class="form-control" id="keberangkatan"
-                                                    onchange="getSelectValue(this.value);" name="from_route" required>
-                                                    @if (old('from_route'))
-                                                        <option value="{{ old('from_route') }}">
-                                                            {{ old('from_route') }}
+                                                <select name="track_id" id="track_id"
+                                                    class="form-control col-sm-10"0
+                                                    onchange="getSelectValue(this.value);" required>
+                                                    <option selected value="" disabled>Pilih Rute
+                                                    </option>
+                                                    @foreach ($tracks as $track)
+                                                        <option
+                                                            value="{{ old('track_id', $track->id) }}">
+                                                            {{ $track->from_route }} -
+                                                            {{ $track->to_route }} 
                                                         </option>
-                                                    @else
-                                                        <option disabled selected>-- Pilih
-                                                            Keberangkatan --
-                                                        </option>
-                                                    @endif
-
-                                                    @foreach ($routeFrom as $rf)
-                                                        @if ($rf != old('from_route'))
-                                                            <option value="{{ $rf }}">
-                                                                {{ ucfirst($rf) }}
-                                                            </option>
-                                                        @endif
                                                     @endforeach
                                                 </select>
-                                                @if ($errors->has('from_route'))
-                                                    <div class="invalid-feedback">
-                                                        Pilih lokasi berangkat dengan benar!
-                                                    </div>
-                                                @endif
+                                                
 
                                             </div>
-                                            <div class="col-sm-5">
-                                                <select class="form-control" id="tujuan"
-                                                    onchange="getSecondValue(this.value);" name="to_route" required>
-                                                    @if (old('to_route'))
-                                                        <option value="{{ old('to_route') }}">
-                                                            {{ old('to_route') }}
-                                                        </option>
-                                                    @else
-                                                        <option disabled selected>-- Pilih Tujuan --</option>
-                                                    @endif
 
-                                                    @foreach ($routeTo as $rt)
-                                                        @if ($rf != old('to_route'))
-                                                            <option value="{{ $rt }}">
-                                                                {{ ucfirst($rt) }}
-                                                            </option>
-                                                        @endif
-                                                    @endforeach
-                                                </select>
-                                                @if ($errors->has('to_route'))
-                                                    <div class="invalid-feedback">
-                                                        Pilih lokasi tujuan dengan benar!
-                                                    </div>
-                                                @endif
-                                            </div>
                                         </div>
-                                        <script type="text/javascript">
-                                            function getSelectValue(keberangkatan) {
-                                                if (keberangkatan != '') {
-                                                    $("#tujuan option[value='" + keberangkatan + "']").hide();
-                                                    $("#tujuan option[value!='" + keberangkatan + "']").show();
-                                                }
-                                            }
+                                      
 
-                                            function getSecondValue(tujuan) {
-                                                if (tujuan != '') {
-                                                    $("#keberangkatan option[value='" + tujuan + "']").hide();
-                                                    $("#keberangkatan option[value!='" + tujuan + "']").show();
-                                                }
-                                            }
-                                        </script>
                                         <div class="form-group row">
-                                            <label for="train_id" class="col-sm-2 col-form-label">Maskapai :</label>
+                                            <label for="train_id" class="col-sm-2 col-form-label">Kereta dan Kelas:</label>
                                             <div class="col-sm-5">
                                                 <select class="form-control" id="train" name="train_id" required>
                                                     @if (old('train_id'))
@@ -168,12 +120,12 @@
                                                             {{ $trains->where('id', old('train_id'))->first()->name }}
                                                         </option>
                                                     @else
-                                                        <option disabled selected>-- Pilih Maskapai --</option>
+                                                        <option disabled selected>-- Pilih Kereta --</option>
                                                     @endif
                                                     @foreach ($trains as $train)
                                                         @if ($train->id != old('train_id'))
                                                             <option value={{ $train->id }}>
-                                                                {{ ucfirst($train->name) }}
+                                                                {{ ucfirst($train->name) }} - {{ ucfirst($train->class) }}
                                                             </option>
                                                         @endif
                                                     @endforeach
@@ -184,75 +136,11 @@
                                                     </div>
                                                 @endif
                                             </div>
-                                            <div class="col-sm-5">
-                                                <div class="form-group">
-                                                    <select name="type_id" class="form-control" id="train_class" required>
-                                                        @if (old('type_id'))
-                                                            <option value={{ old('type_id') }}>
-                                                                {{ $types->where('id', old('type_id'))->first()->name }}
-                                                            </option>
-                                                        @else
-                                                            <option selected value="">-- Pilih Jenis Maskapai --
-                                                            </option>
-                                                        @endif
-
-                                                        @foreach ($types as $type)
-                                                            @if ($type->id != old('type_id'))
-                                                                <option value={{ $type->id }}>
-                                                                    {{ ucfirst($type->name) }}
-                                                                </option>
-                                                            @endif
-                                                        @endforeach
-                                                    </select>
-                                                    @if ($errors->has('train_id'))
-                                                        <div class="invalid-feedback">
-                                                            Pilih jenis maskapai dengan benar!
-                                                        </div>
-                                                    @endif
-                                                </div>
-                                            </div>
+                                            
                                         </div>
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Jenis :</label>
 
-                                            <div class="col-sm-2">
-                                                <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" id="pergi-check" type="radio"
-                                                            name="round_trip"
-                                                            @if (old('round_trip') == true) @else 
-																																																												checked @endif
-                                                            value="false">
-                                                        <label class="form-check-label">Sekali Jalan</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-sm-2">
-                                                <div class="form-group">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" id="pergi-pulang-check"
-                                                            type="radio" name="round_trip" value="true"
-                                                            @if (old('round_trip') == true) checked @else @endif>
-                                                        <label class=" form-check-label">Pulang-Pergi</label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <label for="inputEmail3" class="col-sm-1 col-form-label">Jumlah :</label>
-                                            <div class="col-sm-2">
-                                                <select class="form-control" id="jumlah-penumpang" name="amount">
-                                                    @for ($i = 1; $i <= 5; $i++)
-                                                        @if ($i == old('amount'))
-                                                            <option value={{ $i }} selected>{{ $i }}
-                                                            </option>
-                                                        @else
-                                                            <option value={{ $i }}>{{ $i }}</option>
-                                                        @endif
-                                                    @endfor
-                                                </select>
-                                            </div>
-                                        </div>
 
                                         <div class="form-group row">
                                             <label for="inputEmail3" class="col-sm-2 col-form-label">Pergi :</label>
@@ -292,9 +180,7 @@
 
                                         <div class="form-group row">
                                             <div class="col-lg-2 col-sm-12 align-items-start mb-2">
-                                                <button type="button" class="btn btn-primary" id="checkTicketButton">Cek
-                                                    Harga
-                                                    Tiket Berangkat</button>
+                                                <button type="button" class="btn btn-primary" id="checkTicketButton">Cek Harga Tiket Berangkat</button>
                                             </div>
                                             <div class="col-lg-4 col-sm-12">
                                                 <div class="form-group">
@@ -309,27 +195,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="form-group row pulang-toogle">
-                                            <div class="col-lg-2 col-sm-12 align-items-start mb-2">
-                                                <button type="button" class="btn btn-primary"
-                                                    id="checkTicketButton2">Cek
-                                                    Harga
-                                                    Tiket Pulang</button>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-12">
-                                                <div class="form-group">
-                                                    <div class="form-control">
-                                                        <p id="tickets_shelf2">Klik tombol untuk mengecek harga tiket
-                                                            Pulang</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-4 col-sm-12">
-                                                <div class="badge bg-success">
-                                                    Dalam Bentuk Rupiah
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
+                                       
 
                                         <h4>Data Penumpang :</h4>
 
@@ -593,47 +460,40 @@
 @endsection
 
 <script>
-    window.onload = init;
+    document.getElementById('checkTicketButton').addEventListener('click', function() {
+        var trackId = document.getElementById('track_id').value;
+        var trainId = document.getElementById('train').value;
+        var goDate = document.getElementById('tanggalpergi').value;
 
-    function init() {
-        const checkPriceButton = document.getElementById("checkPriceButton");
-        const pickup = document.getElementById("keberangkatan");
-        const destination = document.getElementById("tujuan");
-        const train = document.getElementById("train");
-        const train_class = document.getElementById("train_class");
-        const checkTicketButton = document.getElementById('checkTicketButton');
-        const ticketsShelf = document.getElementById('tickets_shelf');
-        const checkTicketButton2 = document.getElementById('checkTicketButton2');
-        const ticketsShelf2 = document.getElementById('tickets_shelf2');
+        if (!trackId || !trainId || !goDate) {
+            alert('Please select a route, train, and go date');
+            return;
+        }
 
-        checkTicketButton.addEventListener('click', function() {
-            fetch(
-                    `/checkprice?train_id=${train.value}&type_id=${train_class.value}&from_route=${pickup.value}&to_route=${destination.value}`
-                )
-                .then(response => {
-                    return response.json();
-                })
-                .then(res => {
-                    ticketsShelf.innerHTML = res.price;
-                })
-                .catch(res => {
-                    ticketsShelf.innerHTML = "Harga tiket tidak dapat ditampilkan";
-                })
+        fetch('{{ route('check.ticket.price') }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            },
+            body: JSON.stringify({
+                track_id: trackId,
+                train_id: trainId,
+                go_date: goDate
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.price) {
+                document.getElementById('tickets_shelf').innerText = 'Harga Tiket: ' + data.price + ' Rupiah';
+            } else {
+                document.getElementById('tickets_shelf').innerText = 'Price not found';
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            document.getElementById('tickets_shelf').innerText = 'Error fetching ticket price';
         });
-
-        checkTicketButton2.addEventListener('click', function() {
-            fetch(
-                    `/checkprice?train_id=${train.value}&type_id=${train_class.value}&from_route=${destination.value}&to_route=${pickup.value}`
-                )
-                .then(response => {
-                    return response.json();
-                })
-                .then(res => {
-                    ticketsShelf2.innerHTML = res.price;
-                })
-                .catch(res => {
-                    ticketsShelf2.innerHTML = "Harga tiket tidak dapat ditampilkan";
-                })
-        });
-    }
+    });
 </script>
+

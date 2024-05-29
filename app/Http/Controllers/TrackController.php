@@ -39,7 +39,8 @@ class TrackController extends Controller
     {
         $validatedData = $request->validate([
             'from_route' => ['required'],
-            'to_route' => ['required']
+            'to_route' => ['required'],
+            'travel_time' => ['required']
         ]);
 
         if (Track::where('from_route', $request['from_route'])->where('to_route', $request['to_route'])->first()) {
@@ -84,7 +85,9 @@ class TrackController extends Controller
     {
         $validatedData = $request->validate([
             'from_route' => ['required'],
-            'to_route' => ['required']
+            'to_route' => ['required'],
+            'travel_time' => ['required']
+
         ]);
 
         $check = Track::where('id', '!=', $track->id)->where('from_route', $validatedData['from_route'])->where('to_route', $validatedData['to_route'])->first();

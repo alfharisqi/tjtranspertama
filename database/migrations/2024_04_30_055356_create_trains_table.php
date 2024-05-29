@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('trains', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('peron');
+            $table->string('class');
             $table->timestamps();
         });
     }

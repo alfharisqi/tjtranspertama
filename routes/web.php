@@ -60,6 +60,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Order Route
     Route::resource('/orders', OrderController::class);
 
+
     // Transaction Route
     Route::resource('/transactions', TransactionController::class);
 

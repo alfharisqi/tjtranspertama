@@ -96,39 +96,24 @@
                                                                 <div class="modal-body">
                                                                     <div class="form-group row">
                                                                         <label for="train_id"
-                                                                            class="col-sm-2 col-form-label">Maskapai</label>
+                                                                            class="col-sm-2 col-form-label">Kereta dan Kelas</label>
                                                                         <select name="train_id" id="train_id"
                                                                             class="form-control col-sm-10" required>
                                                                             <option selected value="" disabled>Pilih
-                                                                                Maskapai
+                                                                                Kereta dan Kelas
                                                                             </option>
                                                                             @foreach ($trains as $train)
                                                                                 @if (old('train_id') == $train->id)
                                                                                     <option value="{{ $train->id }}"
                                                                                         selected>
-                                                                                        {{ $train->name }}</option>
+                                                                                        {{ $train->name }} - {{ $train->class }}</option>
                                                                                 @else
                                                                                     <option value="{{ $train->id }}">
-                                                                                        {{ $train->name }}</option>
+                                                                                        {{ $train->name }} - {{ $train->class }}</option>
                                                                                 @endif
                                                                             @endforeach
                                                                         </select>
 
-                                                                    </div>
-
-                                                                    <div class="form-group row">
-                                                                        <label for="type_id"
-                                                                            class="col-sm-2 col-form-label">Jenis</label>
-                                                                        <select name="type_id" id="type_id"
-                                                                            class="form-control col-sm-10" required>
-                                                                            <option selected value="" disabled>Pilih Jenis
-                                                                            </option>
-                                                                            @foreach ($types as $type)
-                                                                                <option value="{{ old('type_id', $type->id) }}">
-                                                                                    {{ $type->name }}
-                                                                                </option>
-                                                                            @endforeach
-                                                                        </select>
                                                                     </div>
 
                                                                     <div class="form-group row">
@@ -143,10 +128,22 @@
                                                                                 <option
                                                                                     value="{{ old('track_id', $track->id) }}">
                                                                                     {{ $track->from_route }} -
-                                                                                    {{ $track->to_route }}
+                                                                                    {{ $track->to_route }} 
                                                                                 </option>
                                                                             @endforeach
                                                                         </select>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="departure_time"
+                                                                            class="col-sm-2 col-form-label">Waktu Keberangkatan</label>
+                                                                            <input type="time" id="departure_time" name="departure_time" required>
+                                                                    </div>
+
+                                                                    <div class="form-group row">
+                                                                        <label for="departure_time"
+                                                                            class="col-sm-2 col-form-label">Waktu Tiba</label>
+                                                                            <input type="time" id="departure_time" name="arrival_time" required>
                                                                     </div>
 
                                                                     <script type="text/javascript">
@@ -202,10 +199,14 @@
                                         <thead>
                                             <tr>
                                                 <th>No</th>
-                                                <th>Maskapai</th>
+                                                <th>Kereta</th>
+                                                <th>Kelas</th>
+
                                                 <th>Pergi dari</th>
                                                 <th>Tujuan ke</th>
-                                                <th>Jenis</th>
+                                                <th>Waktu Keberangkatan</th>
+                                                <th>Waktu Tiba</th>
+
                                                 <th>Jumlah Harga</th>
                                                 @can('isAdmin')
                                                     <th>Action</th>
@@ -226,6 +227,13 @@
                                                         @endisset
                                                     </td>
                                                     <td>
+                                                        @isset($ticket->train->class)
+                                                            {{ $ticket->train->class }}
+                                                        @else
+                                                            Tidak dapat ditampilkan
+                                                        @endisset
+                                                    </td>
+                                                    <td>
                                                         @isset($ticket->track->from_route)
                                                             {{ $ticket->track->from_route }}
                                                         @else
@@ -240,8 +248,15 @@
                                                         @endisset
                                                     </td>
                                                     <td>
-                                                        @isset($ticket->type->name)
-                                                            {{ $ticket->type->name }}
+                                                        @isset($ticket->departure_time)
+                                                            {{ $ticket->departure_time }}
+                                                        @else
+                                                            Tidak dapat ditampilkan
+                                                        @endisset
+                                                    </td>
+                                                    <td>
+                                                        @isset($ticket->arrival_time)
+                                                            {{ $ticket->arrival_time }}
                                                         @else
                                                             Tidak dapat ditampilkan
                                                         @endisset
