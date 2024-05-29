@@ -1,64 +1,61 @@
 @extends('layouts.front')
 
 @section('front')
-    <div class="wrapper">
-        <!-- Navbar -->
-        <x-front-dashboard-navbar></x-front-dashboard-navbar>
-        <!-- /.Navbar -->
+<div class="wrapper">
+    <!-- Navbar -->
+    <x-front-dashboard-navbar></x-front-dashboard-navbar>
+    <!-- /.Navbar -->
 
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sonic</span>
-            </a>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/dashboard" class="brand-link">
+            <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">Sonic</span>
+        </a>
 
-            <!-- Sidebar Menu -->
-            <x-front-sidemenu></x-front-sidemenu>
-            <!-- /.sidebar Menu -->
-        </aside>
+        <!-- Sidebar Menu -->
+        <x-front-sidemenu></x-front-sidemenu>
+        <!-- /.sidebar Menu -->
+    </aside>
 
-        <!-- Content Wrapper. Contains page content -->
-        <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
-            <section class="content-header">
-                <div class="container-fluid">
-                    <div class="row mb-2">
-                        <div class="col-sm-6">
-                            <h1>Users</h1>
-                        </div>
-                        <div class="col-sm-6">
-                            <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Profile</li>
-                            </ol>
-                        </div>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Users</h1>
                     </div>
-                </div><!-- /.container-fluid -->
-            </section>
-
-            <!-- Main content -->
-            <section class="content">
-                <div class="container-fluid">
-                    <div class="row">
-                        @if (session('sameTicket'))
-                            <div class="alert alert-danger">
-                                {{ session('sameTicket') }}
-                            </div>
-                        @endif
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                            <li class="breadcrumb-item active">Profile</li>
+                        </ol>
                     </div>
-                    <div class="row">
-                        <div class="col-md-3">
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-                            <!-- Profile Image -->
-                            <div class="card card-primary @can('isAdmin')
-                            card-danger @endcan card-outline">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
+                <div class="row">
+                    @if (session('sameTicket'))
+                        <div class="alert alert-danger">
+                            {{ session('sameTicket') }}
+                        </div>
+                    @endif
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <!-- Profile Image -->
+                        <div class="card card-primary @can('isAdmin') card-danger @endcan card-outline">
                             <div class="card-header box-profile d-flex flex-column align-items-center">
                                 <div class="text-center">
-                                    @if(file_exists($user->image))
-                                        <img class="profile-user-img img-fluid img-circle" src="{{ asset($user->image) }}">
+                                    @if($user->image && file_exists(public_path($user->image)))
+                                        <img class="profile-user-img img-fluid img-circle" src="{{ asset($user->image) }}" alt="User Image">
                                     @else
                                         <img class="profile-user-img img-fluid img-circle" src="{{ asset('images/default.png') }}" alt="Default profile picture">
                                     @endif
@@ -67,7 +64,7 @@
                                 <h3 class="mt-3 profile-username text-center">{{ $user->name }}</h3>
 
                                 <h6 class="mt-3 text-center bg-primary @can('isAdmin') bg-danger @endcan rounded w-50 h-100">
-                                    {{ $user->role }} 
+                                    {{ $user->role }}
                                 </h6>
                             </div>
                             <!-- /.card-body -->
@@ -124,7 +121,7 @@
                             <div class="card-body">
                                 <div class="tab-content">
                                     <div class="active tab-pane" id="settings">
-                                        <form action="/users/{{ $user->id }}" method="POST" enctype="multipart/form-data">
+                                        <form action="{{ route('users.update', $user->id) }}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                             @method('PUT')
 
@@ -169,7 +166,7 @@
                                                                 <button type="button" id="deleteProfileImage" class="btn btn-danger ml-2">Hapus Gambar</button>
                                                             </div>
                                                         @else
-                                                            <img style="max-width: 100px" src="/path/to/default/image.png" alt="User Image">
+                                                            <img style="max-width: 100px" src="{{ asset('images/default.png') }}" alt="User Image">
                                                         @endif
                                                         <input type="file" class="form-control mt-2" name="image" value="">
                                                     </div>
@@ -249,3 +246,4 @@
         });
     });
 </script>
+@endsection
