@@ -27,12 +27,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Kelas Maskapai</h1>
+                            <h1>Kelas Kereta</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Kelas Maskapai</li>
+                                <li class="breadcrumb-item active">Kelas Kereta</li>
                             </ol>
                         </div>
                     </div>
@@ -74,20 +74,20 @@
 
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <h3 class="card-title">Data Kelas Maskapai</h3>
+                                            <h3 class="card-title">Data Kelas Kereta</h3>
                                         </div>
                                         @can('isAdmin')
                                             <div class="col-sm-6">
                                                 <button class="btn btn-warning btn-sm float-sm-right" type="button"
                                                     data-toggle="modal" data-target="#modal-tambah-type"
-                                                    id="button-tambah-harga">Tambah Kelas Maskapai
+                                                    id="button-tambah-harga">Tambah Kelas Kereta
                                                 </button>
 
                                                 <div class="modal fade" id="modal-tambah-type">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title">Form Tambah Kelas Maskapai</h4>
+                                                                <h4 class="modal-title">Form Tambah Kelas Kereta</h4>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
@@ -100,18 +100,17 @@
 
                                                                 <div class="modal-body">
                                                                     <div class="form-group row">
-                                                                        <label class="col-sm-2 col-form-label">Kelas
-                                                                            Maskapai</label>
+                                                                        <label class="col-sm-2 col-form-label">Kelas Kereta</label>
                                                                         <input type="text" class="col-sm-10 form-control"
                                                                             name="name"
-                                                                            placeholder="Masukkan Kelas Maskapai">
+                                                                            placeholder="Masukkan Kelas Kereta">
                                                                     </div>
 
                                                                     <div class="form-group row">
                                                                         <label class="col-sm-2 col-form-label">Jam
                                                                             Terbang</label>
                                                                         <input type="text" class="col-sm-10 form-control"
-                                                                            name="flight_at"
+                                                                            name="leave_at"
                                                                             placeholder="Masukkan Jam Terbang (HH:MM:SS)">
                                                                     </div>
                                                                 </div>
@@ -136,8 +135,8 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>ID</th>
-                                                <th>Kelas Maskapai</th>
-                                                <th>Flight At</th>
+                                                <th>Kelas Kereta</th>
+                                                <th>Jam Terbang</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -158,8 +157,8 @@
                                                         @endisset
                                                     </td>
                                                     <td>
-                                                        @isset($type->flight_at)
-                                                            {{ $type->flight_at }}
+                                                        @isset($type->leave_at)
+                                                            {{ $type->leave_at }}
                                                         @endisset
                                                     </td>
                                                     <td>
@@ -190,11 +189,11 @@
                                                                     <div class="modal-body">
                                                                         <div class="form-group row">
                                                                             <label class="col-sm-2 col-form-label">Kelas
-                                                                                Maskapai</label>
+                                                                                Kereta</label>
                                                                             <input type="text"
                                                                                 class="col-sm-10 form-control"
                                                                                 name="name"
-                                                                                placeholder="Masukkan Kelas Maskapai"
+                                                                                placeholder="Masukkan Kelas Kereta"
                                                                                 value="{{ old('name', $type->name) }}">
                                                                         </div>
 
@@ -203,9 +202,9 @@
                                                                                 Terbang</label>
                                                                             <input type="text"
                                                                                 class="col-sm-10 form-control"
-                                                                                name="flight_at"
+                                                                                name="leave_at"
                                                                                 placeholder="Masukkan Jam Terbang (HH:MM:SS)"
-                                                                                value="{{ old('flight_at', $type->flight_at) }}">
+                                                                                value="{{ old('leave_at', $type->leave_at) }}">
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">

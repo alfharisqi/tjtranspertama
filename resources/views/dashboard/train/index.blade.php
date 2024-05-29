@@ -10,7 +10,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img?SonicLogo.png') }}" alt="Sonic Logo"
+                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sonic</span>
             </a>
@@ -27,12 +27,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Maskapai</h1>
+                            <h1>Kereta</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Maskapai</li>
+                                <li class="breadcrumb-item active">Kereta</li>
                             </ol>
                         </div>
                     </div>
@@ -74,20 +74,20 @@
 
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <h3 class="card-title">Data Maskapai</h3>
+                                            <h3 class="card-title">Data Kereta</h3>
                                         </div>
                                         @can('isAdmin')
                                             <div class="col-sm-6">
                                                 <button class="btn btn-warning btn-sm float-sm-right" type="button"
                                                     data-toggle="modal" data-target="#modal-tambah-train"
-                                                    id="button-tambah-harga">Tambah Maskapai
+                                                    id="button-tambah-harga">Tambah Kereta
                                                 </button>
 
                                                 <div class="modal fade" id="modal-tambah-train">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title">Form Tambah Maskapai</h4>
+                                                                <h4 class="modal-title">Form Tambah Kereta</h4>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
@@ -101,7 +101,7 @@
                                                                 <div class="modal-body">
                                                                     <div class="form-group row">
                                                                         <label for="train_id"
-                                                                            class="col-sm-2 col-form-label">Maskapai</label>
+                                                                            class="col-sm-2 col-form-label">Kereta</label>
                                                                         <input type="text" class="col-sm-10 form-control"
                                                                             name="name" placeholder="Masukkan Nama Maskapai">
                                                                     </div>
@@ -134,7 +134,7 @@
                                             <tr>
                                                 <th>No</th>
                                                 <th>ID</th>
-                                                <th>Nama Maskapai</th>
+                                                <th>Nama Kereta</th>
                                                 <th>Peron</th>
                                                 <th>Action</th>
                                             </tr>
@@ -175,7 +175,7 @@
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h4 class="modal-title">Form Ubah Data Maskapai</h4>
+                                                                    <h4 class="modal-title">Form Ubah Data Kereta</h4>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
@@ -189,11 +189,11 @@
                                                                     <div class="modal-body">
                                                                         <div class="form-group row">
                                                                             <label for="train_id"
-                                                                                class="col-sm-2 col-form-label">Maskapai</label>
+                                                                                class="col-sm-2 col-form-label">Kereta</label>
                                                                             <input type="text"
                                                                                 class="col-sm-10 form-control"
                                                                                 name="name"
-                                                                                placeholder="Masukkan Nama Maskapai"
+                                                                                placeholder="Masukkan Nama Kereta"
                                                                                 value="{{ old('name', $train->name) }}">
                                                                         </div>
 
