@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Ticket;
-use App\Models\Airline;
+use App\Models\Train;
 use App\Models\Type;
 use App\Models\Track;
 use App\Models\Price;
@@ -26,7 +26,7 @@ class TicketController extends Controller
         // if (Gate::allows('isAdmin')) {
         return view('dashboard.ticket.index', [
             'tickets' => Ticket::all()->load('price'),
-            'airlines' => Airline::all(),
+            'trains' => Train::all(),
             'types' => Type::all(),
             'tracks' => Track::all()
         ]);
@@ -43,7 +43,7 @@ class TicketController extends Controller
     public function create()
     {
         // return view('admin.dashboard.ticket.index', [
-        //     'airlines' => Airline::all(),
+        //     'trains' => Train::all(),
         //     'types' => Type::all(),
         //     'tracks' => Track::all()
         // ]);
@@ -58,13 +58,13 @@ class TicketController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'airline_id' => ['required'],
+            'train_id' => ['required'],
             'type_id' => ['required'],
             'track_id' => ['required'],
             'price' => ['required']
         ]);
 
-        $validateSameTicket = Ticket::where('airline_id', $validatedData['airline_id'])->where('type_id', $validatedData['type_id'])->where('track_id',  $validatedData['track_id'])->first();
+        $validateSameTicket = Ticket::where('train_id', $validatedData['train_id'])->where('type_id', $validatedData['type_id'])->where('track_id',  $validatedData['track_id'])->first();
 
         if ($validateSameTicket) {
             return redirect('/tickets')->with('sameTicket', 'Ticket dengan data tersebut sudah ada di database! jika ingin mengubah harga, masuk ke bagian harga!')->withInput();
@@ -72,7 +72,7 @@ class TicketController extends Controller
 
         Ticket::create($validatedData);
 
-        $currentTicket = Ticket::where('airline_id', $validatedData['airline_id'])->where('type_id', $validatedData['type_id'])->where('track_id',  $validatedData['track_id'])->first()->id;
+        $currentTicket = Ticket::where('train_id', $validatedData['train_id'])->where('type_id', $validatedData['type_id'])->where('track_id',  $validatedData['track_id'])->first()->id;
 
         $validatedPrice['ticket_id'] = $currentTicket;
         $validatedPrice['price'] = $validatedData['price'];

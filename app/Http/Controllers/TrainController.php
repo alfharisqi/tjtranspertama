@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Airline;
+use App\Models\Train;
 use Illuminate\Http\Request;
 
-class AirlineController extends Controller
+class TrainController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class AirlineController extends Controller
      */
     public function index()
     {
-        return view('dashboard.airline.index', [
-            'airlines' => Airline::all()
+        return view('dashboard.train.index', [
+            'trains' => Train::all()
         ]);
     }
 
@@ -39,27 +39,27 @@ class AirlineController extends Controller
     {
         $validatedData = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
-            'gate' => ['required', 'min:3', 'max:10'],
+            'peron' => ['required', 'min:3', 'max:10'],
         ]);
 
-        $check = Airline::where('name', $validatedData['name'])->first();
+        $check = Train::where('name', $validatedData['name'])->first();
 
         if ($check) {
-            return redirect('/airlines')->with('sameAirline', 'Maskapai tersebut sudah ada di database!');
+            return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');
         }
 
-        Airline::create($validatedData);
+        Train::create($validatedData);
 
-        return redirect('/airlines')->with('store', 'Data Maskapai Berhasil Ditambahkan!');
+        return redirect('/trains')->with('store', 'Data Maskapai Berhasil Ditambahkan!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Airline  $airline
+     * @param  \App\Models\Train  $train
      * @return \Illuminate\Http\Response
      */
-    public function show(Airline $airline)
+    public function show(Train $train)
     {
         //
     }
@@ -67,10 +67,10 @@ class AirlineController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Airline  $airline
+     * @param  \App\Models\Train  $train
      * @return \Illuminate\Http\Response
      */
-    public function edit(Airline $airline)
+    public function edit(Train $train)
     {
         //
     }
@@ -79,36 +79,36 @@ class AirlineController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Airline  $airline
+     * @param  \App\Models\Train  $train
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Airline $airline)
+    public function update(Request $request, Train $train)
     {
         $validatedData = $request->validate([
             'name' => ['required', 'min:3', 'max:50'],
-            'gate' => ['required', 'min:3', 'max:10'],
+            'peron' => ['required', 'min:3', 'max:10'],
         ]);
 
-        $check = Airline::where('id', '!=', $airline->id)->where('name', $validatedData['name'])->where('gate', $validatedData['gate'])->first();
+        $check = Train::where('id', '!=', $train->id)->where('name', $validatedData['name'])->where('peron', $validatedData['peron'])->first();
 
         if ($check) {
-            return redirect('/airlines')->with('sameAirline', 'Maskapai tersebut sudah ada di database!');
+            return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');
         }
 
-        $airline->update($validatedData);
+        $train->update($validatedData);
 
-        return redirect('/airlines')->with('update', 'Data Maskapai Berhasil Diubah!');
+        return redirect('/trains')->with('update', 'Data Maskapai Berhasil Diubah!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Airline  $airline
+     * @param  \App\Models\Train  $train
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Airline $airline)
+    public function destroy(Train $train)
     {
-        $airline->delete();
-        return redirect('/airlines')->with('delete', 'Data Maskapai Berhasil Dihapus');
+        $train->delete();
+        return redirect('/trains')->with('delete', 'Data Maskapai Berhasil Dihapus');
     }
 }

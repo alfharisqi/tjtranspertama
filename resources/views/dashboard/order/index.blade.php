@@ -108,8 +108,8 @@
 
                                                     </td>
                                                     <td>
-                                                        @isset($order->ticket->airline->name)
-                                                            {{ $order->ticket->airline->name }}
+                                                        @isset($order->ticket->train->name)
+                                                            {{ $order->ticket->train->name }}
                                                         @else
                                                             Tidak dapat ditampilkan
                                                         @endisset

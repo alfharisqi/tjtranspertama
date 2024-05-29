@@ -102,7 +102,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/airlines" class="nav-link {{ Request::is('airlines') ? 'active' : '' }}">
+                    <a href="/trains" class="nav-link {{ Request::is('trains') ? 'active' : '' }}">
                         📜
                         <p>
                             Maskapai
