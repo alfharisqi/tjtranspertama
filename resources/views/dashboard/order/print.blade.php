@@ -73,7 +73,7 @@
                                 <th>Maskapai</th>
                                 <th>Kelas</th>
                                 <th>Rute</th>
-                                <th>Peron</th>
+                                <th>Kelas</th>
                                 <th>Tanggal Pergi</th>
                                 <th>Jam Terbang</th>
                             </tr>
@@ -86,7 +86,7 @@
                                     <td>{{ $order->ticket->type->name }}</td>
                                     <td>{{ $order->ticket->track->from_route }} - {{ $order->ticket->track->to_route }}
                                     </td>
-                                    <td>{{ $order->ticket->train->peron }}</td>
+                                    <td>{{ $order->ticket->train->class }}</td>
                                     <td>{{ $order->go_date }}</td>
                                     <td>{{ $order->ticket->type->leave_at }} WIB</td>
                                 </tr>

@@ -108,9 +108,9 @@
 
                                                                     <div class="form-group row">
                                                                         <label for="train_id"
-                                                                            class="col-sm-2 col-form-label">Peron</label>
+                                                                            class="col-sm-2 col-form-label">Kelas</label>
                                                                         <input type="text" class="col-sm-10 form-control"
-                                                                            name="peron" placeholder="Masukkan Peron">
+                                                                            name="class" placeholder="Masukkan Kelas">
                                                                     </div>
                                                                 </div>
 
@@ -135,7 +135,7 @@
                                                 <th>No</th>
                                                 <th>ID</th>
                                                 <th>Nama Kereta</th>
-                                                <th>Peron</th>
+                                                <th>Kelas</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -156,8 +156,8 @@
                                                         @endisset
                                                     </td>
                                                     <td>
-                                                        @isset($train->peron)
-                                                            {{ $train->peron }}
+                                                        @isset($train->class)
+                                                            {{ $train->class }}
                                                         @endisset
                                                     </td>
                                                     <td>
@@ -199,11 +199,11 @@
 
                                                                         <div class="form-group row">
                                                                             <label for="train_id"
-                                                                                class="col-sm-2 col-form-label">Peron</label>
+                                                                                class="col-sm-2 col-form-label">Kelas</label>
                                                                             <input type="text"
                                                                                 class="col-sm-10 form-control"
-                                                                                name="peron" placeholder="Masukkan Peron"
-                                                                                value="{{ old('peron', $train->peron) }}">
+                                                                                name="class" placeholder="Masukkan Kelas"
+                                                                                value="{{ old('class', $train->class) }}">
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">

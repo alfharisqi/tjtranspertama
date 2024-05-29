@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('train_id');
-            $table->foreignId('type_id');
             $table->foreignId('track_id');
+            $table->time('departure_time');
+            $table->time('arrival_time');
             $table->timestamps();
         });
     }
