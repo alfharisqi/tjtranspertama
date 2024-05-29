@@ -6,13 +6,14 @@
     <x-front-dashboard-navbar></x-front-dashboard-navbar>
     <!-- /.Navbar -->
 
-    <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="/dashboard" class="brand-link">
-            <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Sonic</span>
-        </a>
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="/dashboard" class="brand-link">
+                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
+                    class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Sonic</span>
+            </a>
 
         <!-- Sidebar Menu -->
         <x-front-sidemenu></x-front-sidemenu>

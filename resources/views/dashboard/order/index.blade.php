@@ -10,7 +10,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo"
+                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sonic</span>
             </a>
@@ -76,11 +76,10 @@
                                                 <th>No</th>
                                                 <th>ID Booking</th>
                                                 <th>Nama</th>
-                                                <th>Maskapai</th>
-                                                <th>Jenis</th>
+                                                <th>Nama Kereta</th>
+                                                <th>Kelas</th>
                                                 <th>Rute</th>
                                                 <th>Jumlah</th>
-                                                <th>Pulang-Pergi</th>
                                                 <th>Tanggal</th>
                                                 <th>Action</th>
                                             </tr>
@@ -116,8 +115,8 @@
 
                                                     </td>
                                                     <td>
-                                                        @isset($order->ticket->type->name)
-                                                            {{ $order->ticket->type->name }}
+                                                        @isset($order->ticket->train->class)
+                                                            {{ $order->ticket->train->class}}
                                                         @else
                                                             Tidak dapat ditampilkan
                                                         @endisset
@@ -139,14 +138,6 @@
                                                             {{ $order->amount }}
                                                         @else
                                                             Tidak dapat ditampilkan
-                                                        @endisset
-
-                                                    </td>
-                                                    <td>
-                                                        @isset($order->round_trip)
-                                                            Ya
-                                                        @else
-                                                            Tidak
                                                         @endisset
 
                                                     </td>

@@ -10,7 +10,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('dist/img/SonicLogo.png') }}" alt="Sonic Logo"
+                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">Sonic</span>
             </a>
@@ -27,12 +27,12 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Rute Penerbangan</h1>
+                            <h1>Rute Berangkat</h1>
                         </div>
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                                <li class="breadcrumb-item active">Rute Penerbangan</li>
+                                <li class="breadcrumb-item active">Rute Berangkat</li>
                             </ol>
                         </div>
                     </div>
@@ -74,20 +74,20 @@
 
                                     <div class="row mb-2">
                                         <div class="col-sm-6">
-                                            <h3 class="card-title">Data Rute Penerbangan</h3>
+                                            <h3 class="card-title">Data Rute Berangkat</h3>
                                         </div>
                                         @can('isAdmin')
                                             <div class="col-sm-6">
                                                 <button class="btn btn-warning btn-sm float-sm-right" type="button"
                                                     data-toggle="modal" data-target="#modal-tambah-type"
-                                                    id="button-tambah-harga">Tambah Rute Penerbangan
+                                                    id="button-tambah-harga">Tambah Rute Berangkat
                                                 </button>
 
                                                 <div class="modal fade" id="modal-tambah-type">
                                                     <div class="modal-dialog modal-lg">
                                                         <div class="modal-content">
                                                             <div class="modal-header">
-                                                                <h4 class="modal-title">Form Tambah Rute Penerbangan</h4>
+                                                                <h4 class="modal-title">Form Tambah Rute Berangkat</h4>
                                                                 <button type="button" class="close" data-dismiss="modal"
                                                                     aria-label="Close">
                                                                     <span aria-hidden="true">&times;</span>
