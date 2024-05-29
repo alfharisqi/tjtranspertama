@@ -46,9 +46,8 @@ class OrderController extends Controller
     public function create()
     {
         return view("dashboard.order.create", [
-            "routes" => Track::all(),
+            "tracks" => Track::all(),
             'trains' => Train::all(),
-            'types' => Type::all(),
             'tickets' => Ticket::all(),
             'methods' => Method::all()
         ]);
@@ -62,69 +61,21 @@ class OrderController extends Controller
      */
     public function store(Request $request)
     {
-        $trackChecker = Track::where('from_route', $request['from_route'])->where('to_route', $request['to_route'])->first();
-        $trackChecker2 = Track::where('from_route', $request['to_route'])->where('to_route', $request['from_route'])->first();
 
-        if ($trackChecker) {
-            $trackCheckerId = $trackChecker->id;
-        } else {
-            $trackCheckerId = 0;
-        }
-
-        if ($trackChecker2) {
-            $trackChecker2Id = $trackChecker2->id;
-        } else {
-            $trackChecker2Id = 0;
-        }
-
-        $ticketChecker1 = Ticket::where('train_id', $request['train_id'])->where('type_id', $request['type_id'])->where('track_id', $trackCheckerId)->first();
-        $ticketChecker2 = Ticket::where('train_id', $request['train_id'])->where('type_id', $request['type_id'])->where('track_id', $trackChecker2Id)->first();
-
-        if (!$ticketChecker1) {
-            return redirect('/orders/create')->with('ticketNotFound1', 'Maaf, tiket berangkat anda tidak tersedia. Dimohon untuk memilih tiket yang lain.')->withInput();
-            die();
-        }
-
-        if (!$ticketChecker2 && $request['round_trip'] == "true") {
-            return redirect('/orders/create')->with('ticketNotFound2', 'Maaf, tiket pulang anda tidak tersedia. Dimohon untuk memilih tiket yang lain.')->withInput();
-            die();
-        }
-
-
-        if ($request['round_trip'] == "true") {
-            $validatedReturnDate = $request->validate([
-                'return_date' => ['required']
-            ]);
-        };
 
         $validatedDataOrder = $request->validate([
-            'from_route' => ['required'],
-            'to_route' => ['required'],
-            'train_id' => ['required'],
-            'type_id' => ['required'],
-            'round_trip' => ['required'],
+            'ticket_id' => ['required'],
             'amount' => ['required'],
             'go_date' => ['required'],
         ]);
-
-        if ($validatedDataOrder['round_trip'] == "true") {
-            $validatedDataOrder['round_trip'] = true;
-        } else {
-            $validatedDataOrder['round_trip'] = false;
-        }
 
         $validatedDataOrder['user_id'] = auth()->user()->id;
         $order_code1 = strval(number_format(microtime(true) * 1000, 0, '.', ''));
         $validatedDataOrder['order_code'] = $order_code1;
 
-        $from_route = $request['from_route'];
-        $to_route = $request['to_route'];
-        $train_id = $request['train_id'];
-        $type_id = $request['type_id'];
 
-        $track_id = Track::where('from_route', $from_route)->where('to_route', $to_route)->first()->id;
 
-        $validatedDataOrder['ticket_id'] = Ticket::where('train_id', $train_id)->where('type_id', $type_id)->where('track_id', $track_id)->first()->id;
+        $validatedDataOrder['ticket_id'] = $request['ticket_id'];
 
         Order::create($validatedDataOrder);
 
@@ -148,54 +99,6 @@ class OrderController extends Controller
 
         sleep(1);
 
-        if ($validatedDataOrder['round_trip'] == true) {
-            $validatedDataOrder2 = $request->validate([
-                'from_route' => ['required'],
-                'to_route' => ['required'],
-                'train_id' => ['required'],
-                'type_id' => ['required'],
-                'round_trip' => ['required'],
-                'amount' => ['required'],
-            ]);
-
-            if ($validatedDataOrder2['round_trip'] == "true") {
-                $validatedDataOrder2['round_trip'] = true;
-            } else {
-                $validatedDataOrder2['round_trip'] = false;
-            }
-
-            $validatedDataOrder2['user_id'] = auth()->user()->id;
-            $order_code2 = strval(number_format(microtime(true) * 1000, 0, '.', ''));
-            $validatedDataOrder2['order_code'] = $order_code2;
-            $validatedDataOrder2['go_date'] = $validatedReturnDate['return_date'];
-
-            $from_route = $request['to_route'];
-            $to_route = $request['from_route'];
-            $train_id = $request['train_id'];
-            $type_id = $request['type_id'];
-
-            $track_id = Track::where('from_route', $from_route)->where('to_route', $to_route)->first()->id;
-
-            $validatedDataOrder2['ticket_id'] = Ticket::where('train_id', $train_id)->where('type_id', $type_id)->where('track_id', $track_id)->first()->id;
-
-            Order::create($validatedDataOrder2);
-
-            $validatedDataTransaction2 = $request->validate([
-                'method_id' => ['required'],
-                'name_account' => ['required'],
-                'from_account' => ['required']
-            ]);
-
-            $order2 = Order::where('order_code', $order_code2)->first();
-
-            $validatedDataTransaction2['order_id'] = $order2->id;
-
-            $validatedDataTransaction2['total'] = $order2->ticket->price->price * $validatedDataOrder['amount'];
-
-            $validatedDataTransaction2['status'] = false;
-
-            Transaction::create($validatedDataTransaction2);
-        }
 
         $validatedDataPassengers1 = $request->validate([
             'nama_penumpang_1' => ['required',],
@@ -304,45 +207,7 @@ class OrderController extends Controller
                 Passenger::create($validatedRealPassenger1);
         };
 
-        if ($validatedDataOrder['round_trip'] == true) {
-            switch ($request['amount']) {
-                case 5:
-                    $validatedRealPassenger5 = [];
-                    $validatedRealPassenger5['order_id'] = $order2->id;
-                    $validatedRealPassenger5['name'] = $validatedDataPassengers5['nama_penumpang_5'];
-                    $validatedRealPassenger5['id_number'] = $validatedDataPassengers5['nik_penumpang_5'];
-                    $validatedRealPassenger5['gender'] = $validatedDataPassengers5['jenis_penumpang_5'];
-                    Passenger::create($validatedRealPassenger5);
-                case 4:
-                    $validatedRealPassenger4 = [];
-                    $validatedRealPassenger4['order_id'] = $order2->id;
-                    $validatedRealPassenger4['name'] = $validatedDataPassengers4['nama_penumpang_4'];
-                    $validatedRealPassenger4['id_number'] = $validatedDataPassengers4['nik_penumpang_4'];
-                    $validatedRealPassenger4['gender'] = $validatedDataPassengers4['jenis_penumpang_4'];
-                    Passenger::create($validatedRealPassenger4);
-                case 3:
-                    $validatedRealPassenger3 = [];
-                    $validatedRealPassenger3['order_id'] = $order2->id;
-                    $validatedRealPassenger3['name'] = $validatedDataPassengers3['nama_penumpang_3'];
-                    $validatedRealPassenger3['id_number'] = $validatedDataPassengers3['nik_penumpang_3'];
-                    $validatedRealPassenger3['gender'] = $validatedDataPassengers3['jenis_penumpang_3'];
-                    Passenger::create($validatedRealPassenger3);
-                case 2:
-                    $validatedRealPassenger2 = [];
-                    $validatedRealPassenger2['order_id'] = $order2->id;
-                    $validatedRealPassenger2['name'] = $validatedDataPassengers2['nama_penumpang_2'];
-                    $validatedRealPassenger2['id_number'] = $validatedDataPassengers2['nik_penumpang_2'];
-                    $validatedRealPassenger2['gender'] = $validatedDataPassengers2['jenis_penumpang_2'];
-                    Passenger::create($validatedRealPassenger2);
-                case 1:
-                    $validatedRealPassenger1 = [];
-                    $validatedRealPassenger1['order_id'] = $order2->id;
-                    $validatedRealPassenger1['name'] = $validatedDataPassengers1['nama_penumpang_1'];
-                    $validatedRealPassenger1['id_number'] = $validatedDataPassengers1['nik_penumpang_1'];
-                    $validatedRealPassenger1['gender'] = $validatedDataPassengers1['jenis_penumpang_1'];
-                    Passenger::create($validatedRealPassenger1);
-            };
-        }
+
 
         return redirect('/transactions')->with('success', 'Pesanan berhasil ditambahkan!');
     }
