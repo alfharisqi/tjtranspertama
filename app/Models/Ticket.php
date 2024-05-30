@@ -21,11 +21,6 @@ class Ticket extends Model
         return $this->belongsTo(Train::class);
     }
 
-    public function type()
-    {
-        return $this->belongsTo(Type::class);
-    }
-
     public function track()
     {
         return $this->belongsTo(Track::class);

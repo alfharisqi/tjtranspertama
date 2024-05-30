@@ -7,7 +7,6 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\TrainController;
-use App\Http\Controllers\TypeController;
 use App\Http\Controllers\TrackController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\PriceController;
@@ -66,9 +65,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Train Route
     Route::resource('/trains', TrainController::class)->middleware('can:isAdmin');
-
-    // Type Route
-    Route::resource('/types', TypeController::class)->middleware('can:isAdmin');
 
     // Track Route
     Route::resource('/tracks', TrackController::class)->middleware('can:isAdmin');
