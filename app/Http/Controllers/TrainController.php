@@ -45,12 +45,12 @@ class TrainController extends Controller
         $check = Train::where('name', $validatedData['name'])->where('class',  $validatedData['class'])->first();
 
         if ($check) {
-            return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');
+            return redirect('/trains')->with('sameTrain', 'Kereta tersebut sudah ada di database!');
         }
 
         Train::create($validatedData);
 
-        return redirect('/trains')->with('store', 'Data Maskapai Berhasil Ditambahkan!');
+        return redirect('/trains')->with('store', 'Data Kereta Berhasil Ditambahkan!');
     }
 
     /**
@@ -92,12 +92,12 @@ class TrainController extends Controller
         $check = Train::where('id', '!=', $train->id)->where('name', $validatedData['name'])->where('class', $validatedData['class'])->first();
 
         if ($check) {
-            return redirect('/trains')->with('sameTrain', 'Maskapai tersebut sudah ada di database!');
+            return redirect('/trains')->with('sameTrain', 'Kereta tersebut sudah ada di database!');
         }
 
         $train->update($validatedData);
 
-        return redirect('/trains')->with('update', 'Data Maskapai Berhasil Diubah!');
+        return redirect('/trains')->with('update', 'Data Kereta Berhasil Diubah!');
     }
 
     /**
@@ -109,6 +109,6 @@ class TrainController extends Controller
     public function destroy(Train $train)
     {
         $train->delete();
-        return redirect('/trains')->with('delete', 'Data Maskapai Berhasil Dihapus');
+        return redirect('/trains')->with('delete', 'Data Kereta Berhasil Dihapus');
     }
 }
