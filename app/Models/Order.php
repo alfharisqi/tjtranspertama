@@ -21,19 +21,9 @@ class Order extends Model
         return $this->belongsTo(Ticket::class);
     }
 
-    public function payment()
-    {
-        return $this->hasOne(Payment::class);
-    }
-
     public function transaction()
     {
         return $this->hasOne(Transaction::class);
-    }
-
-    public function total()
-    {
-        return $this->hasOne(Total::class);
     }
 
     public function passengers()
