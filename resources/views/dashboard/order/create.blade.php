@@ -79,7 +79,12 @@
                                             <option selected value="" disabled>Pilih Tiket</option>
                                             @foreach ($tickets as $ticket)
                                             <option value="{{ $ticket->id }}" {{ old('ticket_id') == $ticket->id ? 'selected' : '' }}>
-                                                {{ $ticket->track->from_route }} - {{ $ticket->track->to_route }} | {{ $ticket->train->class }} | {{ $ticket->departure_time }} s.d {{ $ticket->arrival_time }} | Biaya: Rp {{ $ticket->price->price }}.
+                                                {{ $ticket->track->from_route }} - {{ $ticket->track->to_route }} | {{ $ticket->train->class }} | {{ $ticket->departure_time }} s.d {{ $ticket->arrival_time }}
+                                                @if($ticket->price)
+                                                | Biaya: Rp {{ $ticket->price->price }}.
+                                                @else
+                                                | Biaya: Tidak tersedia.
+                                                @endif
                                             </option>
                                             @endforeach
                                         </select>

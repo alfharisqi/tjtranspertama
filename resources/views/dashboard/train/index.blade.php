@@ -103,7 +103,7 @@
                                                                         <label for="train_id"
                                                                             class="col-sm-2 col-form-label">Kereta</label>
                                                                         <input type="text" class="col-sm-10 form-control"
-                                                                            name="name" placeholder="Masukkan Nama Maskapai">
+                                                                            name="name" placeholder="Masukkan Nama Kereta">
                                                                     </div>
 
                                                                     <div class="form-group row">

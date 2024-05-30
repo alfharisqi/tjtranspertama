@@ -108,10 +108,10 @@
 
                                                                     <div class="form-group row">
                                                                         <label class="col-sm-2 col-form-label">Jam
-                                                                            Terbang</label>
+                                                                            Berangkat</label>
                                                                         <input type="text" class="col-sm-10 form-control"
                                                                             name="leave_at"
-                                                                            placeholder="Masukkan Jam Terbang (HH:MM:SS)">
+                                                                            placeholder="Masukkan Jam Berangkat (HH:MM:SS)">
                                                                     </div>
                                                                 </div>
 
@@ -136,7 +136,7 @@
                                                 <th>No</th>
                                                 <th>ID</th>
                                                 <th>Kelas Kereta</th>
-                                                <th>Jam Terbang</th>
+                                                <th>Jam Berangkat</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -176,7 +176,7 @@
                                                         <div class="modal-dialog modal-lg">
                                                             <div class="modal-content">
                                                                 <div class="modal-header">
-                                                                    <h4 class="modal-title">Form Ubah Data Maskapai</h4>
+                                                                    <h4 class="modal-title">Form Ubah Data Kereta</h4>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
@@ -199,11 +199,11 @@
 
                                                                         <div class="form-group row">
                                                                             <label class="col-sm-2 col-form-label">Jam
-                                                                                Terbang</label>
+                                                                                Berangkat</label>
                                                                             <input type="text"
                                                                                 class="col-sm-10 form-control"
                                                                                 name="leave_at"
-                                                                                placeholder="Masukkan Jam Terbang (HH:MM:SS)"
+                                                                                placeholder="Masukkan Jam Berangkat (HH:MM:SS)"
                                                                                 value="{{ old('leave_at', $type->leave_at) }}">
                                                                         </div>
                                                                     </div>

@@ -47,12 +47,12 @@ class TypeController extends Controller
             ->first();
 
         if ($check) {
-            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut dengan jam terbang yang sama sudah ada di database!');
+            return redirect('/types')->with('sameType', 'Kelas Kereta tersebut dengan jam berangkat yang sama sudah ada di database!');
         }
 
         Type::create($validatedData);
 
-        return redirect('/types')->with('store', "Kelas Maskapai berhasil ditambahkan");
+        return redirect('/types')->with('store', "Kelas Kereta berhasil ditambahkan");
     }
 
     /**
@@ -97,12 +97,12 @@ class TypeController extends Controller
             ->first();
 
         if ($check) {
-            return redirect('/types')->with('sameType', 'Kelas maskapai tersebut dengan jam terbang yang sama sudah ada di database!');
+            return redirect('/types')->with('sameType', 'Kelas Kereta tersebut dengan jam berangkat yang sama sudah ada di database!');
         }
 
         $type->update($validatedData);
 
-        return redirect('/types')->with('update', "Kelas Maskapai berhasil diubah");
+        return redirect('/types')->with('update', "Kelas Kereta berhasil diubah");
     }
 
     /**
@@ -115,6 +115,6 @@ class TypeController extends Controller
     {
         $type->delete();
 
-        return redirect('/types')->with('delete', 'Kelas Maskapai berhasil dihapus');
+        return redirect('/types')->with('delete', 'Kelas Kereta berhasil dihapus');
     }
 }

@@ -40,8 +40,14 @@ class TrackController extends Controller
         $validatedData = $request->validate([
             'from_route' => ['required'],
             'to_route' => ['required'],
-            'travel_time' => ['required']
+            'travel_time' => ['required', 'date_format:H:i'],
         ]);
+
+        // Ensure travel_time is stored in HH:MM:SS format
+        $timeParts = explode(':', $validatedData['travel_time']);
+        if (count($timeParts) == 2) {
+            $validatedData['travel_time'] = $validatedData['travel_time'] . ':00';
+        }
 
         if (Track::where('from_route', $request['from_route'])->where('to_route', $request['to_route'])->first()) {
             return redirect('/tracks')->with('sameRoute', 'Rute tersebut sudah ada di database!');
@@ -86,9 +92,13 @@ class TrackController extends Controller
         $validatedData = $request->validate([
             'from_route' => ['required'],
             'to_route' => ['required'],
-            'travel_time' => ['required']
-
+            'travel_time' => ['required', 'date_format:H:i'],
         ]);
+
+        $timeParts = explode(':', $validatedData['travel_time']);
+        if (count($timeParts) == 2) {
+            $validatedData['travel_time'] = $validatedData['travel_time'] . ':00';
+        }
 
         $check = Track::where('id', '!=', $track->id)->where('from_route', $validatedData['from_route'])->where('to_route', $validatedData['to_route'])->first();
 
@@ -98,7 +108,7 @@ class TrackController extends Controller
 
         $track->update($validatedData);
 
-        return redirect('/tracks')->with('update', 'Rute tersebut berhasil diubah!');;
+        return redirect('/tracks')->with('update', 'Rute tersebut berhasil diubah!');
     }
 
     /**
