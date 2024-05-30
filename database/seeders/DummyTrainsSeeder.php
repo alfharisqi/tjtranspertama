@@ -14,11 +14,15 @@ class DummyTrainsSeeder extends Seeder
     public function run(): void
     {
         $TrainData = [
-            [   'id' => 1,
-                'name'=>'Sonic Train',
-                'class'=>'EKONOMI'
-            ]
-            ];
+            ['name' => 'Sonic Train', 'class' => 'BISNIS'],
+            ['name' => 'Surya Kencana', 'class' => 'BISNIS'],
+            ['name' => 'Surya Kencana', 'class' => 'EKSEKUTIF'],
+            ['name' => 'Surya Kencana', 'class' => 'VIP'],
+            ['name' => 'Sribilah Jaya', 'class' => 'EKONOMI'],
+            ['name' => 'Sribilah Jaya', 'class' => 'EKSEKUTIF'],
+            ['name' => 'Fast Train', 'class' => 'EKSEKUTIF'],
+            ['name' => 'Speed Train', 'class' => 'EKONOMI'],
+        ];
 
             foreach($TrainData as $key => $val){
                 Train::create($val);

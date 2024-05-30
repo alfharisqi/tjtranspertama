@@ -14,11 +14,11 @@ class DummyTracksSeeder extends Seeder
     public function run(): void
     {
         $trackData = [
-            [   'id' => 1,
-                'from_route'=>'Medan',
-                'to_route'=>'Siantar',
-                'travel_time'=> '02:30'
-            ]
+            [ 'from_route' => 'Medan', 'to_route' => 'Siantar', 'travel_time' => '02:30' ],
+            [ 'from_route' => 'Jakarta', 'to_route' => 'Bandung', 'travel_time' => '03:15' ],
+            [ 'from_route' => 'Surabaya', 'to_route' => 'Malang', 'travel_time' => '02:00' ],
+            [ 'from_route' => 'Yogyakarta', 'to_route' => 'Semarang', 'travel_time' => '01:45' ],
+            [ 'from_route' => 'Denpasar', 'to_route' => 'Mataram', 'travel_time' => '04:00' ],
             ];
 
             foreach($trackData as $key => $val){

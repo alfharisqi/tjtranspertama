@@ -6,14 +6,14 @@
     <x-front-dashboard-navbar></x-front-dashboard-navbar>
     <!-- /.Navbar -->
 
-        <!-- Main Sidebar Container -->
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
-            <a href="/dashboard" class="brand-link">
-                <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
-                    class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sonic</span>
-            </a>
+    <!-- Main Sidebar Container -->
+    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="/dashboard" class="brand-link">
+            <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
+                class="brand-image img-circle elevation-3" style="opacity: .8">            
+            <span class="brand-text font-weight-light">Sonic</span>
+        </a>
 
         <!-- Sidebar Menu -->
         <x-front-sidemenu></x-front-sidemenu>
@@ -166,8 +166,6 @@
                                                                 <img style="max-width: 100px" src="{{ asset($user->image) }}" alt="User Image">
                                                                 <button type="button" id="deleteProfileImage" class="btn btn-danger ml-2">Hapus Gambar</button>
                                                             </div>
-                                                        @else
-                                                            <img style="max-width: 100px" src="{{ asset('images/default.png') }}" alt="User Image">
                                                         @endif
                                                         <input type="file" class="form-control mt-2" name="image" value="">
                                                     </div>
