@@ -11,253 +11,114 @@ use App\Models\Passenger;
 use App\Models\Ticket;
 use App\Models\Transaction;
 use App\Models\Complaint;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        if (Gate::allows('isAdmin')) {
-            return view('dashboard.order.index', [
-                'orders' => Order::all(),
-                'complaints' => Complaint::all()
-            ]);
-        } else {
-            return view('dashboard.order.index', [
-                'orders' => Order::where('user_id', Auth::id())->get(),
-                'complaints' => Complaint::all(),
-            ]);
-        }
+        // Menampilkan pesanan sesuai hak akses
+        $orders = Gate::allows('isAdmin') ? Order::all() : Order::where('user_id', Auth::id())->get();
+
+        // Mengarahkan ke view pesantiket
+        return view('pesantiket', [
+            'orders' => $orders,
+            'complaints' => Complaint::all()
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        return view("dashboard.order.create", [
-            "tracks" => Track::all(),
+        // Menyediakan data untuk form pemesanan tiket
+        return view('pesantiket', [
+            'tracks' => Track::all(),
             'trains' => Train::all(),
             'tickets' => Ticket::all(),
             'methods' => Method::all()
         ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-
-
-        $validatedDataOrder = $request->validate([
-            'ticket_id' => ['required'],
-            'amount' => ['required'],
-            'go_date' => ['required'],
+        // Validasi Order
+        $validatedOrder = $request->validate([
+            'ticket_id' => ['required', 'exists:tickets,id'],
+            'amount' => ['required', 'integer', 'min:1', 'max:5'],
+            'go_date' => ['required', 'date'],
         ]);
 
-        $validatedDataOrder['user_id'] = auth()->user()->id;
-        $order_code1 = strval(number_format(microtime(true) * 1000, 0, '.', ''));
-        $validatedDataOrder['order_code'] = $order_code1;
+        // Menambahkan user_id dan order_code
+        $validatedOrder['user_id'] = auth()->id();
+        $validatedOrder['order_code'] = (string) number_format(microtime(true) * 1000, 0, '', '');
 
+        // Menyimpan data Order
+        $order = Order::create($validatedOrder);
 
-
-        $validatedDataOrder['ticket_id'] = $request['ticket_id'];
-
-        Order::create($validatedDataOrder);
-
-        // Transaction 1
-
-        $validatedDataTransaction = $request->validate([
-            'method_id' => ['required'],
-            'name_account' => ['required'],
-            'from_account' => ['required']
+        // Validasi dan Buat Transaction
+        $validatedTransaction = $request->validate([
+            'method_id' => ['required', 'exists:methods,id'],
+            'name_account' => ['required', 'string'],
+            'from_account' => ['required', 'string']
         ]);
 
-        $order1 = Order::where('order_code', $order_code1)->first();
+        $validatedTransaction['order_id'] = $order->id;
+        $validatedTransaction['total'] = $order->ticket->price->price * $validatedOrder['amount'];
+        $validatedTransaction['status'] = false;
 
-        $validatedDataTransaction['order_id'] = $order1->id;
+        // Menyimpan data Transaction
+        Transaction::create($validatedTransaction);
 
-        $validatedDataTransaction['total'] = $order1->ticket->price->price * $validatedDataOrder['amount'];
-
-        $validatedDataTransaction['status'] = false;
-
-        Transaction::create($validatedDataTransaction);
-
-        sleep(1);
-
-
-        $validatedDataPassengers1 = $request->validate([
-            'nama_penumpang_1' => ['required',],
-            'nik_penumpang_1' => ['required',],
-            'jenis_penumpang_1' => ['required',]
-        ]);
-
-        if ($validatedDataPassengers1['jenis_penumpang_1'] == "true") {
-            $validatedDataPassengers1['jenis_penumpang_1'] = true;
-        } else {
-            $validatedDataPassengers1['jenis_penumpang_1'] = false;
-        }
-
-        if ($request['nama_penumpang_2'] && $request['nik_penumpang_2'] && $request['jenis_penumpang_2']) {
-            $validatedDataPassengers2 = $request->validate([
-                'nama_penumpang_2' => [],
-                'nik_penumpang_2' => [],
-                'jenis_penumpang_2' => [],
-            ]);
-
-            if ($validatedDataPassengers2['jenis_penumpang_2'] == "true") {
-                $validatedDataPassengers2['jenis_penumpang_2'] = true;
+        // Validasi dan Buat Passengers
+        for ($i = 1; $i <= $validatedOrder['amount']; $i++) {
+            if (
+                $request->filled("nama_penumpang_$i") &&
+                $request->filled("nik_penumpang_$i") &&
+                $request->filled("jenis_penumpang_$i")
+            ) {
+                Passenger::create([
+                    'order_id' => $order->id,
+                    'name' => $request->input("nama_penumpang_$i"),
+                    'id_number' => $request->input("nik_penumpang_$i"),
+                    'gender' => $request->input("jenis_penumpang_$i") === "true",
+                ]);
             } else {
-                $validatedDataPassengers2['jenis_penumpang_2'] = false;
+                return back()->withErrors(['Penumpang ke-' . $i . ' belum lengkap!'])->withInput();
             }
         }
 
-        if ($request['nama_penumpang_3'] && $request['nik_penumpang_3'] && $request['jenis_penumpang_3']) {
-            $validatedDataPassengers3 = $request->validate([
-                'nama_penumpang_3' => [],
-                'nik_penumpang_3' => [],
-                'jenis_penumpang_3' => [],
-            ]);
-
-            if ($validatedDataPassengers3['jenis_penumpang_3'] == "true") {
-                $validatedDataPassengers3['jenis_penumpang_3'] = true;
-            } else {
-                $validatedDataPassengers3['jenis_penumpang_3'] = false;
-            }
-        }
-
-
-        if ($request['nama_penumpang_4'] && $request['nik_penumpang_4'] && $request['jenis_penumpang_4']) {
-            $validatedDataPassengers4 = $request->validate([
-                'nama_penumpang_4' => [],
-                'nik_penumpang_4' => [],
-                'jenis_penumpang_4' => [],
-            ]);
-
-            if ($validatedDataPassengers4['jenis_penumpang_4'] == "true") {
-                $validatedDataPassengers4['jenis_penumpang_4'] = true;
-            } else {
-                $validatedDataPassengers4['jenis_penumpang_4'] = false;
-            }
-        }
-
-        if ($request['nama_penumpang_5'] && $request['nik_penumpang_5'] && $request['jenis_penumpang_5']) {
-            $validatedDataPassengers5 = $request->validate([
-                'nama_penumpang_5' => [],
-                'nik_penumpang_5' => [],
-                'jenis_penumpang_5' => [],
-            ]);
-
-            if ($validatedDataPassengers5['jenis_penumpang_5'] == "true") {
-                $validatedDataPassengers5['jenis_penumpang_5'] = true;
-            } else {
-                $validatedDataPassengers5['jenis_penumpang_5'] = false;
-            }
-        }
-
-        switch ($request['amount']) {
-            case 5:
-                $validatedRealPassenger5 = [];
-                $validatedRealPassenger5['order_id'] = $order1->id;
-                $validatedRealPassenger5['name'] = $validatedDataPassengers5['nama_penumpang_5'];
-                $validatedRealPassenger5['id_number'] = $validatedDataPassengers5['nik_penumpang_5'];
-                $validatedRealPassenger5['gender'] = $validatedDataPassengers5['jenis_penumpang_5'];
-                Passenger::create($validatedRealPassenger5);
-            case 4:
-                $validatedRealPassenger4 = [];
-                $validatedRealPassenger4['order_id'] = $order1->id;
-                $validatedRealPassenger4['name'] = $validatedDataPassengers4['nama_penumpang_4'];
-                $validatedRealPassenger4['id_number'] = $validatedDataPassengers4['nik_penumpang_4'];
-                $validatedRealPassenger4['gender'] = $validatedDataPassengers4['jenis_penumpang_4'];
-                Passenger::create($validatedRealPassenger4);
-            case 3:
-                $validatedRealPassenger3 = [];
-                $validatedRealPassenger3['order_id'] = $order1->id;
-                $validatedRealPassenger3['name'] = $validatedDataPassengers3['nama_penumpang_3'];
-                $validatedRealPassenger3['id_number'] = $validatedDataPassengers3['nik_penumpang_3'];
-                $validatedRealPassenger3['gender'] = $validatedDataPassengers3['jenis_penumpang_3'];
-                Passenger::create($validatedRealPassenger3);
-            case 2:
-                $validatedRealPassenger2 = [];
-                $validatedRealPassenger2['order_id'] = $order1->id;
-                $validatedRealPassenger2['name'] = $validatedDataPassengers2['nama_penumpang_2'];
-                $validatedRealPassenger2['id_number'] = $validatedDataPassengers2['nik_penumpang_2'];
-                $validatedRealPassenger2['gender'] = $validatedDataPassengers2['jenis_penumpang_2'];
-                Passenger::create($validatedRealPassenger2);
-            case 1:
-                $validatedRealPassenger1 = [];
-                $validatedRealPassenger1['order_id'] = $order1->id;
-                $validatedRealPassenger1['name'] = $validatedDataPassengers1['nama_penumpang_1'];
-                $validatedRealPassenger1['id_number'] = $validatedDataPassengers1['nik_penumpang_1'];
-                $validatedRealPassenger1['gender'] = $validatedDataPassengers1['jenis_penumpang_1'];
-                Passenger::create($validatedRealPassenger1);
-        };
-
-
-
+        // Redirect ke halaman transaksi setelah berhasil
         return redirect('/transactions')->with('success', 'Pesanan berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function show(Order $order)
     {
-        //
+        // Belum digunakan
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Order $order)
     {
-        //
+        // Belum digunakan
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, Order $order)
     {
-        //
+        // Belum digunakan
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Order  $order
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Order $order)
     {
-        $transaction = Transaction::where('order_id', $order->id)->first()->id;
-        Transaction::destroy($transaction);
+        // Menghapus transaksi yang terkait dengan order
+        $transaction = Transaction::where('order_id', $order->id)->first();
+        if ($transaction) {
+            $transaction->delete();
+        }
 
-        $order->destroy($order->id);
-        return redirect('/orders')->with('hapus', 'Data berhasil dihapus!');
+        // Menghapus order
+        $order->delete();
+
+        // Redirect setelah penghapusan
+        return redirect('/pesantiket')->with('hapus', 'Data berhasil dihapus!');
     }
 }

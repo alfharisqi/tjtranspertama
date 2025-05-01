@@ -3,7 +3,7 @@
 @section('front-end')
 <x-front-navbar></x-front-navbar>
 
-<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/train4.jpg');">
+<section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url('images/travellandingpage.png');">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
@@ -24,7 +24,7 @@
 						<span class="fa fa-map-marker"></span>
 					</div>
 					<h3 class="mb-2">Address</h3>
-					<p>Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</p>
+					<p>Alamat</p>
 				</div>
 			</div>
 			<div class="col-md-4 d-flex">
@@ -33,8 +33,8 @@
 						<span class="fa fa-phone"></span>
 					</div>
 					<h3 class="mb-4">Contact Number</h3>
-					<p><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah">081260679408 Admin 1(Petra)</a></p>
-					<p><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah">081364981832 Admin 1(Syuja)</a></p>
+					<p><a href="">081289889888 Admin 1</a></p>
+					<p><a href="">081365655656 Admin 2</a></p>
 				</div>
 			</div>
 			<div class="col-md-4 d-flex">
@@ -43,7 +43,7 @@
 						<span class="fa fa-paper-plane"></span>
 					</div>
 					<h3 class="mb-4">Email Address</h3>
-					<p><a href="mailto:sonicticket@gmail.com">sonic@gmail.com</a></p>
+					<p><a href="">tjtrans@gmail.com</a></p>
 				</div>
 			</div>
 		</div>
@@ -55,7 +55,7 @@
 	<div class="container">
 		<div class="row block-9">
 			<div class="col-md-12 d-flex justify-content-center">
-				<iframe src="https://www.google.com/maps/d/u/0/embed?mid=1eBukMCmT6gtQXaLc3dEO-lQ7tvVCAT4&ehbc=2E312F&noprof=1" width="640" height="480"></iframe>			</div>
+				<iframe src="https://maps.app.goo.gl/Sub9VrnGNWp5hNGt9" width="640" height="480" loading="lazy"></iframe>			</div>
 		</div>
 	</div>
 </section>
@@ -67,12 +67,11 @@
 			<div class="col-md pt-5">
 				<div class="ftco-footer-widget pt-md-5 mb-4">
 					<h2 class="ftco-heading-2">About</h2>
-					<p>Sonic yang berarti kecepatan. Ini menandakan website
-						kami memberi respon dengan cepat dan bisa diandalkan. Sesuai dengan kebutuhan pengguna kami.</p>
+					<p>Kami di TJ Trans berkomitmen untuk memberikan layanan transportasi yang aman, nyaman, dan tepat waktu. Dengan pengalaman bertahun-tahun, kami melayani berbagai kebutuhan perjalanan Anda, mulai dari perjalanan pribadi hingga layanan transportasi korporat. Percayakan perjalanan Anda pada kami, dan nikmati kenyamanan serta kualitas layanan terbaik.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="" target="_blank"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="https://www.instagram.com/sonicjourneyy?igsh=ZmxzMzM1c201ancx&utm_source=qr" target="_blank"><span class="fa fa-instagram"></span></a></li>
+						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-facebook"></span></a></li>
+						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -81,12 +80,12 @@
 					<h2 class="ftco-heading-2">Have a Questions?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon fa fa-map-marker"></span><span class="text">Gedung C Fasilkom-TI, Universitas Sumatera Utara, Jl. Alumni No.3, Padang Bulan, Kec. Medan Baru, Kota Medan, Sumatera Utara 20155</span></li>
-							<li><a href="https://wa.me/6281260679408?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081260679408 Admin 1(Petra)
+							<li><span class="icon fa fa-map-marker"></span><span class="text">Alamat</span></li>
+							<li><a href=""><span class="icon fa fa-whatsapp"></span><span class="text">123 Admin 1
 										</span></a></li>
-							<li><a href="https://wa.me/6281364981832?text=Ingin%20Melaporkan%20Masalah"><span class="icon fa fa-whatsapp"></span><span class="text">081364981832 Admin 2(syuja)
+							<li><a href=""><span class="icon fa fa-whatsapp"></span><span class="text">123 Admin 2
 										</span></a></li>
-							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">Sonic@gmail.com</span></a></li>
+							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">tjtrans@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -97,7 +96,7 @@
 
 				<p>
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Sonic &copy;
+					TJ Trans &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>

@@ -16,17 +16,14 @@ use App\Http\Controllers\UserController;
 require __DIR__ . '/auth.php';
 
 /*
-|--------------------------------------------------------------------------
+|---------------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
+|---------------------------------------------------------------------------
+| Here is where you can register web routes for your application.
+| These routes are loaded by the RouteServiceProvider within a group 
+| which contains the "web" middleware group. Now create something great!
 |
 */
-
-
 
 Route::get('/', function () {
     return view('landing');
@@ -36,9 +33,14 @@ Route::get('/about', function () {
     return view('about');
 });
 
-Route::get('/destination', function () {
-    return view('destination');
-});
+    // Orders route
+    Route::resource('/pesantiket', OrderController::class);  // Tetap menggunakan OrderController untuk handle pemesanan tiket
+
+    // Ticket Route (jika masih diperlukan)
+    Route::resource('/tickets', TicketController::class);
+
+// Pindahkan rute pesantiket ke halaman utama
+Route::get('/pesantiket', [OrderController::class, 'create'])->name('pesantiket');
 
 Route::get('/contact', function () {
     return view('contact');
@@ -56,10 +58,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-    // Order Route
-    Route::resource('/orders', OrderController::class);
-
-
     // Transaction Route
     Route::resource('/transactions', TransactionController::class);
 
@@ -68,9 +66,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Track Route
     Route::resource('/tracks', TrackController::class)->middleware('can:isAdmin');
-
-    // Ticket Route
-    Route::resource('/tickets', TicketController::class);
 
     // Price Route
     Route::resource('/prices', PriceController::class);
@@ -81,9 +76,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // User Route
     Route::resource('/users', UserController::class);
 
-    // routes/web.php
+    // Profile route for deleting image
     Route::delete('/profile/delete-image', [UserController::class, 'deleteImage'])->name('user.deleteImage');
-
-    // Check Price Route
-    Route::get('/checkprice', [OrderController::class, 'checkprice']);
 });
+

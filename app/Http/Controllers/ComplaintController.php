@@ -52,7 +52,7 @@ class ComplaintController extends Controller
             Complaint::where('order_id', $request['order_id'])->update(['seenForAdmin' => 1]);
         }
 
-        return redirect('/orders')->with('lapor', 'Keluhan anda berhasil dikirim!');
+        return redirect('/pesantiket')->with('lapor', 'Keluhan anda berhasil dikirim!');
     }
 
     /**

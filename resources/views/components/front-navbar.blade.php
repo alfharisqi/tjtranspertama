@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
     <div class="container">
-        <a class="navbar-brand" href="./"><img class="d-inline-block" src="images/LogoSonic.png" width="200"
+        <a class="navbar-brand" href="./"><img class="d-inline-block" src="images/tjulogo.png" width="100"
                 alt="logo" /><span class="fw-bold text-primary ms-2"></span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
             aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,13 +13,17 @@
                 </li>
                 <li class="nav-item {{ Request::is('about') ? 'active ' : '' }}"><a href="/about"
                         class="nav-link">About</a></li>
-                <li class="nav-item {{ Request::is('destination') ? 'active ' : '' }}"><a href="/destination"
-                        class="nav-link">Destination</a></li>
+                <li class="nav-item {{ Request::is('pesantiket') ? 'active ' : '' }}"><a href="/pesantiket"
+                        class="nav-link">Pesan Ticket</a></li>
                 <li class="nav-item {{ Request::is('contact') ? 'active ' : '' }}"><a href="/contact"
                         class="nav-link">Contact</a></li>
                 @auth
-                    <li class="nav-item {{ Request::is('dashboard') ? 'active ' : '' }}"><a href="/dashboard"
-                            class="nav-link">Dashboard</a></li>
+                <li class="nav-item {{ Request::is('dashboard') ? 'active' : '' }}">
+                        <a href="/dashboard" class="nav-link d-flex align-items-center">
+                            <i class="fa fa-user-circle fa-2x mr-2"></i>
+                            <span class="text-white">{{ Auth::user()->name }}</span>
+                        </a>
+                    </li>
                 @else
                     <li class="nav-item {{ Request::is('register') ? 'active ' : '' }}"><a href="/register"
                             class="nav-link">Register</a></li>
