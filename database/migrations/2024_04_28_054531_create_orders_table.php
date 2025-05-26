@@ -21,6 +21,7 @@ return new class extends Migration
         $table->date('go_date');
         $table->integer('amount');
         $table->text('alamat_lengkap');
+        $table->json('selected_seats')->nullable();
         $table->timestamps();
     });
 }

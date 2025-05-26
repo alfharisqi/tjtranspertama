@@ -47,12 +47,14 @@ class OrderController extends Controller
         'amount' => ['required', 'integer', 'min:1', 'max:5'],
         'go_date' => ['required', 'date'],
         'alamat_lengkap' => ['required', 'string', 'max:255'],
+        'selected_seats' => ['required', 'string'],
     ]);
 
 
         // Menambahkan user_id dan order_code
         $validatedOrder['user_id'] = auth()->id();
         $validatedOrder['order_code'] = (string) number_format(microtime(true) * 1000, 0, '', '');
+        $validatedOrder['selected_seats'] = json_encode(explode(',', $request->input('selected_seats')));
 
         // Menyimpan data Order
         $order = Order::create($validatedOrder);
@@ -67,7 +69,7 @@ class OrderController extends Controller
         $validatedTransaction['order_id'] = $order->id;
         $validatedTransaction['total'] = $order->ticket->price->price * $validatedOrder['amount'];
         $validatedTransaction['status'] = false;
-
+        
         // Menyimpan data Transaction
         Transaction::create($validatedTransaction);
 
