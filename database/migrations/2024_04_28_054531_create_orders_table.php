@@ -12,17 +12,19 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('user_id');
-            $table->string('order_code');
-            $table->foreignId('ticket_id');
-            $table->date('go_date');
-            $table->integer('amount');
-            $table->timestamps();
-        });
-    }
+{
+    Schema::create('orders', function (Blueprint $table) {
+        $table->id();
+        $table->foreignId('user_id');
+        $table->string('order_code');
+        $table->foreignId('ticket_id');
+        $table->date('go_date');
+        $table->integer('amount');
+        $table->text('alamat_lengkap');
+        $table->timestamps();
+    });
+}
+
 
     /**
      * Reverse the migrations.

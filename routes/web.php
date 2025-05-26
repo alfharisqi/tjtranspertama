@@ -34,9 +34,9 @@ Route::get('/about', function () {
 });
 
     // Orders route
-    Route::resource('/pesantiket', OrderController::class);  // Tetap menggunakan OrderController untuk handle pemesanan tiket
+    Route::resource('/pesantiket', OrderController::class); 
 
-    // Ticket Route (jika masih diperlukan)
+    // Ticket Route 
     Route::resource('/tickets', TicketController::class);
 
 // Pindahkan rute pesantiket ke halaman utama
@@ -58,6 +58,11 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Dashboard Route
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
+    // Order Route
+    // Halaman Riwayat Pesanan
+    Route::get('/orders', [OrderController::class, 'index'])->middleware('auth');
+    Route::delete('/orders/{order}', [OrderController::class, 'destroy'])->middleware('auth');
+
     // Transaction Route
     Route::resource('/transactions', TransactionController::class);
 
@@ -78,5 +83,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     // Profile route for deleting image
     Route::delete('/profile/delete-image', [UserController::class, 'deleteImage'])->name('user.deleteImage');
+
+    // Check Price Route
+    Route::get('/checkprice', [OrderController::class, 'checkprice']);
 });
 

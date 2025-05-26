@@ -10,8 +10,8 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/dashboard" class="brand-link">
-            <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">Sonic</span>
+            <img src="{{ asset('favicon.ico') }}" alt="tjtrans Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <span class="brand-text font-weight-light">TJ Trans</span>
         </a>
 
         <!-- Sidebar Menu -->
@@ -91,10 +91,10 @@
 
                                                         <div class="modal-body">
                                                             <div class="form-group row">
-                                                                <label for="train_id" class="col-sm-2 col-form-label">Kereta dan Kelas</label>
+                                                                <label for="train_id" class="col-sm-2 col-form-label">Bus dan Kelas</label>
                                                                 <select name="train_id" id="train_id" class="form-control col-sm-10" required>
                                                                     <option selected value="" disabled>Pilih
-                                                                        Kereta dan Kelas
+                                                                    Bus dan Kelas
                                                                     </option>
                                                                     @foreach ($trains as $train)
                                                                     @if (old('train_id') == $train->id)
@@ -163,7 +163,7 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Kereta</th>
+                                            <th>Bus</th>
                                             <th>Kelas</th>
 
                                             <th>Pergi dari</th>
@@ -300,7 +300,7 @@
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
-        <strong>Sonic &copy; 2024.</strong>
+        <strong>TJ Trans &copy; 2024.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
         </div>

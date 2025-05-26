@@ -57,7 +57,7 @@
                 </a>
             </li>
             
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a href="/orders/create" class="nav-link {{ Request::is('orders/create') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
@@ -65,7 +65,7 @@
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
-            </li>
+            </li> -->
             <li class="nav-item">
                 <a href="#"
                     class="nav-link {{ Request::is('transactions') || Request::is('orders') ? 'active' : '' }}">
@@ -106,7 +106,7 @@
                     <a href="/trains" class="nav-link {{ Request::is('trains') ? 'active' : '' }}">
                         📜
                         <p>
-                            Kereta
+                            Bus
                             <i class="fas fa-angle-left right"></i>
                         </p>
                     </a>

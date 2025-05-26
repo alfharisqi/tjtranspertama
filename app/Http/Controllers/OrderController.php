@@ -18,16 +18,15 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function index()
-    {
-        // Menampilkan pesanan sesuai hak akses
-        $orders = Gate::allows('isAdmin') ? Order::all() : Order::where('user_id', Auth::id())->get();
+{
+    $orders = Gate::allows('isAdmin') ? Order::all() : Order::where('user_id', Auth::id())->get();
 
-        // Mengarahkan ke view pesantiket
-        return view('pesantiket', [
-            'orders' => $orders,
-            'complaints' => Complaint::all()
-        ]);
-    }
+    return view('dashboard.order.index', [
+        'orders' => $orders,
+        'complaints' => Complaint::all()
+    ]);
+}
+
 
     public function create()
     {
@@ -44,10 +43,12 @@ class OrderController extends Controller
     {
         // Validasi Order
         $validatedOrder = $request->validate([
-            'ticket_id' => ['required', 'exists:tickets,id'],
-            'amount' => ['required', 'integer', 'min:1', 'max:5'],
-            'go_date' => ['required', 'date'],
-        ]);
+        'ticket_id' => ['required', 'exists:tickets,id'],
+        'amount' => ['required', 'integer', 'min:1', 'max:5'],
+        'go_date' => ['required', 'date'],
+        'alamat_lengkap' => ['required', 'string', 'max:255'],
+    ]);
+
 
         // Menambahkan user_id dan order_code
         $validatedOrder['user_id'] = auth()->id();

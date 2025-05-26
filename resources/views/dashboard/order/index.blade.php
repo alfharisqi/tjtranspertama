@@ -12,7 +12,7 @@
             <a href="/dashboard" class="brand-link">
                 <img src="{{ asset('favicon.ico') }}" alt="Sonic Logo"
                     class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">Sonic</span>
+                <span class="brand-text font-weight-light">TJ Trans</span>
             </a>
 
             <!-- Sidebar Menu -->
@@ -76,7 +76,8 @@
                                                 <th>No</th>
                                                 <th>ID Booking</th>
                                                 <th>Nama</th>
-                                                <th>Nama Kereta</th>
+                                                <th>Titik Penjemputan</th>
+                                                <th>Nama Armada</th>
                                                 <th>Kelas</th>
                                                 <th>Rute</th>
                                                 <th>Jumlah</th>
@@ -106,6 +107,13 @@
                                                         @endisset
 
                                                     </td>
+                                                    <td>
+                @isset($order->alamat_lengkap)
+                    {{ $order->alamat_lengkap }}
+                @else
+                    Tidak dapat ditampilkan
+                @endisset
+            </td>
                                                     <td>
                                                         @isset($order->ticket->train->name)
                                                             {{ $order->ticket->train->name }}
@@ -150,7 +158,7 @@
 
                                                     </td>
                                                     <td>
-                                                        @can('isAdmin')
+                                                        <!-- @can('isAdmin')
                                                             <a href="/print?order={{ $order->order_code }}" target="_blank">
                                                                 <button class="btn btn-success btn-xs"
                                                                     type="button">Cetak</button>
@@ -163,7 +171,7 @@
                                                                         type="button">Cetak</button>
                                                                 </a>
                                                             @endif
-                                                        @endcan
+                                                        @endcan -->
 
                                                         @can('isCustomer')
                                                             @if ($order->transaction->status == false)
@@ -295,7 +303,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Sonic &copy; 2024.</strong>
+            <strong>TJ Trans &copy; 2024.</strong>
             All rights reserved.
             <div class="float-right d-none d-sm-inline-block">
             </div>
