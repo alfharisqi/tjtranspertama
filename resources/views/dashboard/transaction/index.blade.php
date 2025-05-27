@@ -156,7 +156,7 @@
                                                                     <h4 class="modal-title">Update Status Transaksi
                                                                         dengan
                                                                         <strong>Booking ID
-                                                                            {{ $transaction->order->order_code }}</strong>
+                                                                            {{ isset($order) ? $order->order_code : '-' }}</strong>
                                                                     </h4>
                                                                     <button type="button" class="close"
                                                                         data-dismiss="modal" aria-label="Close">
@@ -172,7 +172,7 @@
                                                                         <div class="card card-body">
                                                                             <h5 style="font-weight: 700">Data Penumpang</h5>
                                                                             <ol>
-                                                                                @foreach ($transaction->order->passengers as $passenger)
+                                                                                @foreach (($order->passengers ?? []) as $passenger)
                                                                                     <li class="mb-4">
                                                                                         <ul>
                                                                                             <li>
@@ -274,7 +274,7 @@
                                                                             <label type="text"
                                                                                 class="form-control">Konfirmasi/setujui
                                                                                 transaksi dengan Booking ID
-                                                                                {{ $transaction->order->order_code }}
+                                                                                {{ isset($order) ? $order->order_code : '-' }}
                                                                                 ?</label>
                                                                         </div>
 
