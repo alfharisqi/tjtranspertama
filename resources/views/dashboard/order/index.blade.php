@@ -76,6 +76,7 @@
                                                 <th>No</th>
                                                 <th>ID Booking</th>
                                                 <th>Nama</th>
+                                                <th>Nomor Whatsapp</th>
                                                 <th>Titik Penjemputan</th>
                                                 <th>Nama Armada</th>
                                                 <th>Kelas</th>
@@ -99,6 +100,7 @@
                                                             Tidak dapat ditampilkan
                                                         @endisset
                                                     </td>
+                                            
                                                     <td>
                                                         @isset($order->user->name)
                                                             {{ $order->user->name }}
@@ -108,12 +110,20 @@
 
                                                     </td>
                                                     <td>
-                @isset($order->alamat_lengkap)
-                    {{ $order->alamat_lengkap }}
-                @else
-                    Tidak dapat ditampilkan
-                @endisset
-            </td>
+                                                        @isset($order->nowhatsapp)
+                                                            {{ $order->nowhatsapp }}
+                                                        @else
+                                                            Tidak dapat ditampilkan
+                                                        @endisset
+                                                    </td>
+                                                    
+                                                    <td>
+                                                        @isset($order->alamat_lengkap)
+                                                            {{ $order->alamat_lengkap }}
+                                                        @else
+                                                            Tidak dapat ditampilkan
+                                                        @endisset
+                                                    </td>
                                                     <td>
                                                         @isset($order->ticket->train->name)
                                                             {{ $order->ticket->train->name }}
@@ -158,7 +168,7 @@
 
                                                     </td>
                                                     <td>
-                                                        <!-- @can('isAdmin')
+                                                        @can('isAdmin')
                                                             <a href="/print?order={{ $order->order_code }}" target="_blank">
                                                                 <button class="btn btn-success btn-xs"
                                                                     type="button">Cetak</button>
@@ -171,7 +181,7 @@
                                                                         type="button">Cetak</button>
                                                                 </a>
                                                             @endif
-                                                        @endcan -->
+                                                        @endcan
 
                                                         @can('isCustomer')
                                                             @if ($order->transaction->status == false)

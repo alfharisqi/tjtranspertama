@@ -69,13 +69,13 @@
                                 <div class="small-box bg-success">
                                     <div class="inner">
                                         <h3>Pesanan</h3>
-                                        <p>Terdapat pesanan lebih dari {{ $orders->count() - 1 }}</p>
+                                        <p>Terdapat pesanan lebih dari {{ max(0, $orders->count() - 1) }}</p>
                                         <br>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
-                                    <a href="#" class="small-box-footer">Klik untuk melihat daftar pesanan <i
+                                    <a href="orders" class="small-box-footer">Klik untuk melihat daftar pesanan <i
                                             class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>
@@ -124,13 +124,13 @@
                                     <div class="inner">
                                         <h3>Pesanan</h3>
 
-                                        <p>Ayo, pesan tiket pesawat mu sekarang!</p>
+                                        <p>Ayo, pesan tiket Travel mu sekarang!</p>
                                         <br>
                                     </div>
                                     <div class="icon">
                                         <i class="ion ion-stats-bars"></i>
                                     </div>
-                                    <a href="/orders/create" class="small-box-footer">Klik untuk memesan tiket pesawat <i
+                                    <a href="pesantiket" class="small-box-footer">Klik untuk memesan tiket Travel <i
                                             class="fas fa-arrow-circle-right"></i></a>
                                 </div>
                             </div>

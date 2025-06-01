@@ -58,7 +58,7 @@
             </li>
             
             <li class="nav-item">
-                <a href="/orders/create" class="nav-link {{ Request::is('orders/create') ? 'active' : '' }}">
+                <a href="/pesantiket" class="nav-link {{ Request::is('orders/create') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                         Buat Pesanan

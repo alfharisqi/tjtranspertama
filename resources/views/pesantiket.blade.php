@@ -83,10 +83,8 @@
                                     </div>
                                 </div>
 
-                                
-                                {{-- Data Alamat --}}
+
                                 <hr>
-                                <h6 class="mb-3">Alamat Pemesanan</h6>
                                 <div class="form-row mb-2">
                                     <div class="col-md-6">
                                         <label>Alamat Lengkap</label>
@@ -94,36 +92,38 @@
                                         <small class="text-muted">Contoh: Jl. Merdeka No.123, RT 4/RW 5, Kel. Sukamaju</small>
                                         <small class="text-muted">dan Tambahkan share link google maps untuk lebih detail</small>
                                     </div>
+                                    <div class="col-md-3">
+                                        <label>Nomor Whatsapp</label>
+                                        <input type="text" class="form-control" name="nowhatsapp" placeholder="No. Whatsapp" required value="{{ old('nowhatsapp') }}">
+                                        <small class="text-muted">Nomor whatsapp pengirim</small>
+                                    </div>
                                 </div>
 
-                                {{-- Data Penumpang --}}
-                                <hr>
-                                <h6 class="mb-3">Data Penumpang</h6>
                                 @for ($i = 1; $i <= 5; $i++)
-                                    <div class="card mb-3 penumpang-form penumpang-{{ $i }}" style="{{ old('amount', 1) < $i ? 'display:none;' : '' }}">
+                                    <div class="card border-0 mb-3 penumpang-form penumpang-{{ $i }}" style="{{ old('amount', 1) < $i ? 'display:none;' : '' }}">
                                         <div class="card-body">
                                             <h5 class="card-title">Penumpang ke-{{ $i }}</h5>
-
-                                            <div class="mb-3">
-                                                <label for="nama_penumpang_{{ $i }}" class="form-label">Nama</label>
-                                                <input type="text" name="nama_penumpang_{{ $i }}" class="form-control" value="{{ old('nama_penumpang_'.$i) }}">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="nik_penumpang_{{ $i }}" class="form-label">NIK</label>
-                                                <input type="text" name="nik_penumpang_{{ $i }}" class="form-control" value="{{ old('nik_penumpang_'.$i) }}">
-                                            </div>
-
-                                            <div class="mb-3">
-                                                <label for="jenis_penumpang_{{ $i }}" class="form-label">Jenis Kelamin</label>
-                                                <select name="jenis_penumpang_{{ $i }}" class="form-select">
-                                                    <option value="true" {{ old('jenis_penumpang_'.$i) == "true" ? 'selected' : '' }}>Laki-laki</option>
-                                                    <option value="false" {{ old('jenis_penumpang_'.$i) == "false" ? 'selected' : '' }}>Perempuan</option>
-                                                </select>
+                                            <div class="row align-items-end">
+                                                <div class="col-md-4">
+                                                    <label for="nama_penumpang_{{ $i }}" class="form-label">Nama</label>
+                                                    <input type="text" name="nama_penumpang_{{ $i }}" class="form-control" value="{{ old('nama_penumpang_'.$i) }}">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="umur_penumpang_{{ $i }}" class="form-label">Umur</label>
+                                                    <input type="number" name="umur_penumpang_{{ $i }}" class="form-control" value="{{ old('umur_penumpang_'.$i) }}" min="0">
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <label for="jenis_penumpang_{{ $i }}" class="form-label">Jenis Kelamin</label>
+                                                    <select name="jenis_penumpang_{{ $i }}" class="form-select">
+                                                        <option value="true" {{ old('jenis_penumpang_'.$i) == "true" ? 'selected' : '' }}>Laki-laki</option>
+                                                        <option value="false" {{ old('jenis_penumpang_'.$i) == "false" ? 'selected' : '' }}>Perempuan</option>
+                                                    </select>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 @endfor
+
                                 
                                 {{-- Pilih Kursi --}}
                                 <hr>

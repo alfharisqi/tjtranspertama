@@ -47,6 +47,7 @@ class OrderController extends Controller
         'amount' => ['required', 'integer', 'min:1', 'max:5'],
         'go_date' => ['required', 'date'],
         'alamat_lengkap' => ['required', 'string', 'max:255'],
+        'nowhatsapp' => ['required', 'string', 'max:255'],
         'selected_seats' => ['required', 'string'],
     ]);
 
