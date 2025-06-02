@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+
     <style>
         * {
             margin: 0;
@@ -17,13 +19,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            padding: 20px;
         }
 
         .card {
             background: #ffffff;
             display: flex;
             flex-direction: row;
-            width: 90%;
+            width: 100%;
             max-width: 900px;
             height: 500px;
             border-radius: 16px;
@@ -40,16 +43,16 @@
             align-items: center;
             padding: 30px;
             color: white;
+            text-align: center;
         }
 
         .left-side img {
-            width: 120px;
+            width: 100px;
             margin-bottom: 20px;
         }
 
         .left-side h2 {
-            font-size: 26px;
-            text-align: center;
+            font-size: 24px;
         }
 
         .right-side {
@@ -128,15 +131,50 @@
             text-decoration: underline;
         }
 
+        /* Tablet & Mobile */
         @media (max-width: 768px) {
             .card {
                 flex-direction: column;
                 height: auto;
             }
+
             .left-side, .right-side {
                 flex: unset;
                 width: 100%;
                 padding: 20px;
+                text-align: center;
+            }
+
+            .right-side {
+                padding: 30px 20px;
+            }
+
+            .btn {
+                padding: 14px;
+            }
+        }
+
+        /* Extra small (phones) */
+        @media (max-width: 480px) {
+            .left-side img {
+                width: 80px;
+            }
+
+            .left-side h2 {
+                font-size: 20px;
+            }
+
+            .btn {
+                font-size: 14px;
+            }
+
+            .input-style {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            footer a {
+                font-size: 13px;
             }
         }
     </style>
@@ -150,7 +188,18 @@
         <h2>Login to Your Account</h2>
     </div>
 
+
+
+
     <div class="right-side">
+
+    
+    <div style="font-size: 14px; margin-bottom: 20px;">
+        Belum punya akun?
+        <a href="{{ route('register') }}" style="color: #66a6ff; text-decoration: none;">
+            Register sekarang!
+        </a>
+    </div>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
@@ -187,4 +236,3 @@
 
 </body>
 </html>
-{{-- </x-guest-layout> --}}

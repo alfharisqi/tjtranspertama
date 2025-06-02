@@ -41,7 +41,7 @@
             <li class="nav-header">MENUS</li>
             <li class="nav-item menu-open">
                 <a href="/dashboard" class="nav-link {{ Request::is('dashboard*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                <i class="nav-icon fas fa-tachometer-alt"></i>
                     <p>
                         Dashboard
                     </p>
@@ -52,7 +52,7 @@
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                         Buat Pesanan
-                        <i class="fas fa-angle-left right"></i>
+                        
                     </p>
                 </a>
             </li>
@@ -61,7 +61,7 @@
                     <i class="nav-icon fas fa-money-bill-wave"></i>
                     <p>
                         Daftar Tiket
-                        <i class="fas fa-angle-left right"></i>
+                        
                     </p>
                 </a>
             </li>
@@ -97,7 +97,7 @@
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Users
-                            <i class="fas fa-angle-left right"></i>
+                            
                         </p>
                     </a>
                 </li>
@@ -106,7 +106,7 @@
                         📜
                         <p>
                             Bus
-                            <i class="fas fa-angle-left right"></i>
+                            
                         </p>
                     </a>
                 </li>
@@ -115,7 +115,7 @@
                         📚
                         <p>
                             Rute Berangkat
-                            <i class="fas fa-angle-left right"></i>
+                            
                         </p>
                     </a>
                 </li>
@@ -124,7 +124,7 @@
                         💳
                         <p>
                             Metode Pembayaran
-                            <i class="fas fa-angle-left right"></i>
+                            
                         </p>
                     </a>
                 </li>

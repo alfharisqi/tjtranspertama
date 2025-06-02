@@ -8,14 +8,15 @@
 	<div class="container">
 		<div class="row no-gutters slider-text js-fullheight align-items-center" data-scrollax-parent="true">
 			<div class="col-md-7 ftco-animate">
-				<h1 class="mb-4">Selamat Datang di</h1>
-				<h1 class="mb-4">TJ Trans</h1>
-				<p class="caps">Aplikasi berbasis website untuk jasa pemesanan travel</p>
-				<a href="/pesantiket" class="btn btn-primary">Pesan Sekarang!</a>
+				<h1 class="mb-4">Selamat Datang</h1>
+				<h1 class="mb-4">TJ TRANS EXECUTIVE</h1>
+				<p class="caps">Rasakan kenyamanan kelas Executive dalam setiap perjalanan anda</p>
+				<a href="/pesantiket" class="btn btn-primary btn-lg btn-block">Pesan Sekarang!</a>
 			</div>
 		</div>
 	</div>
 </div>
+
 
 <section class="ftco-section">
 	<div class="container">
@@ -153,9 +154,7 @@
 	</div>
 </section>
 
-
-
-<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-image: url(images/bg_3.jpg);">
+<footer class="ftco-footer bg-bottom ftco-no-pt" style="background-image: url(images/bg_3.jpg); background-size: cover;">
 	<div class="container">
 		<div class="row mb-5">
 			<div class="col-md pt-5">
@@ -163,9 +162,9 @@
 					<h2 class="ftco-heading-2">About</h2>
 					<p>TJ Trans Executive berkomitmen untuk memberikan layanan transportasi yang aman, nyaman, dan tepat waktu. Dengan pengalaman bertahun-tahun, kami melayani berbagai kebutuhan perjalanan Anda, mulai dari perjalanan pribadi hingga layanan transportasi korporat. Percayakan perjalanan Anda pada kami, dan nikmati kenyamanan serta kualitas layanan terbaik.</p>
 					<ul class="ftco-footer-social list-unstyled float-md-left float-lft">
-						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-twitter"></span></a></li>
-						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-facebook"></span></a></li>
-						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-instagram"></span></a></li>
+						<!-- <li class="ftco-animate"><a href="" target="#"><span class="fa fa-twitter"></span></a></li>
+						<li class="ftco-animate"><a href="" target="#"><span class="fa fa-facebook"></span></a></li> -->
+						<li class="ftco-animate"><a href="https://www.instagram.com/terusjayautama.tour?igsh=MWVnbXE0dHVnazRzeQ==" target="_blank"><span class="fa fa-instagram"></span></a></li>
 					</ul>
 				</div>
 			</div>
@@ -174,12 +173,20 @@
 					<h2 class="ftco-heading-2">Have a Questions?</h2>
 					<div class="block-23 mb-3">
 						<ul>
-							<li><span class="icon fa fa-map-marker"></span><span class="text">Alamat</span></li>
-							<li><a href=""><span class="icon fa fa-whatsapp"></span><span class="text">123 Admin 1
-										</span></a></li>
-							<li><a href=""><span class="icon fa fa-whatsapp"></span><span class="text">123 Admin 2
-										</span></a></li>
-							<li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">tjtransexecutive@gmail.com</span></a></li>
+							<li><a href="https://maps.app.goo.gl/x8TDCJXzDmAMJDoY9?g_st=aw" target="_blank"><span class="icon fa fa-map-marker"></span><span class="text">PT Terus Jaya Utama</span></a></li>
+							<li>
+                                <span class="icon fa fa-whatsapp"></span>
+                            <a href="https://wa.me/6282256908988" target="_blank" style="color: #25D366; text-decoration: none;">
+                                Admin 1
+                            </a>    
+                            </li>
+							<li>
+                                <span class="icon fa fa-whatsapp"></span>
+                            <a href="https://wa.me/6281347872090" target="_blank" style="color: #25D366; text-decoration: none;">
+                                Admin 2
+                            </a>    
+                            </li>
+							<li><a href="mailto:namakamu@gmail.com" style="color: #D44638; text-decoration: none;"><span class="icon fa fa-envelope"></span><span class="text">tjtransexecutive@gmail.com</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -187,14 +194,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12 text-center">
-
 				<p>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					TJ Trans Executive &copy;
 					<script>
 						document.write(new Date().getFullYear());
 					</script>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</p>
 			</div>
 		</div>

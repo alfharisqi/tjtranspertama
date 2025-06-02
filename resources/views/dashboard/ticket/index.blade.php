@@ -7,11 +7,11 @@
     <!-- /.Navbar -->
 
     <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <aside class="main-sidebar sidebar-light-primary elevation-4">
         <!-- Brand Logo -->
         <a href="/dashboard" class="brand-link">
             <img src="{{ asset('favicon.ico') }}" alt="tjtrans Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-            <span class="brand-text font-weight-light">TJ Trans</span>
+            <span class="brand-text font-weight-light">TJ Trans Executive</span>
         </a>
 
         <!-- Sidebar Menu -->
