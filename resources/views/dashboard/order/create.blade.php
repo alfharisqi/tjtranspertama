@@ -25,12 +25,12 @@
 
 
     <!-- /.content-wrapper -->
-    <footer class="main-footer">
-        <strong>Sonic &copy; 2024.</strong>
-        All rights reserved.
-        <div class="float-right d-none d-sm-inline-block">
-        </div>
-    </footer>
+        <footer class="main-footer">
+            <strong>TJ Trans Executive &copy; 2025.</strong>
+            All rights reserved.
+            <div class="float-right d-none d-sm-inline-block">
+            </div>
+        </footer>
 
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">

@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="page-header">
-                        <img src="{{ asset('dist/img/LogoSonic.png') }}" alt="Sonic Logo" width="220">
+                        <img src="{{ asset('dist/img/tjulogo.png') }}" alt="Tjtrans Logo" width="220">
                     </h2>
                 </div>
                 <!-- /.col -->
@@ -19,11 +19,11 @@
                     <br>
                     <br>
                     <address>
-                        <strong>Sonic</strong><br>
-                        Jl. Dr. Sudirman<br>
-                        Kec. Medan Barat<br>
+                        <strong>TJ Trans Executive</strong><br>
+                        Bukit Tinggi<br>
+                        Kalimantan Tengah<br>
                         Phone: 081384002161<br>
-                        Email: sonicticket@gmail.com
+                        Email: tjtransexecutive@gmail.com
                     </address>
                 </div>
                 <!-- /.col -->

@@ -48,20 +48,19 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="/tickets" class="nav-link {{ Request::is('tickets*') ? 'active' : '' }}">
-                    <i class="nav-icon fas fa-money-bill-wave"></i>
-                    <p>
-                        Daftar Tiket
-                        <i class="fas fa-angle-left right"></i>
-                    </p>
-                </a>
-            </li>
-            
-            <li class="nav-item">
                 <a href="/pesantiket" class="nav-link {{ Request::is('orders/create') ? 'active' : '' }}">
                     <i class="nav-icon fas fa-edit"></i>
                     <p>
                         Buat Pesanan
+                        <i class="fas fa-angle-left right"></i>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="/tickets" class="nav-link {{ Request::is('tickets*') ? 'active' : '' }}">
+                    <i class="nav-icon fas fa-money-bill-wave"></i>
+                    <p>
+                        Daftar Tiket
                         <i class="fas fa-angle-left right"></i>
                     </p>
                 </a>
